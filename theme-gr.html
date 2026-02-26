@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Telur Cerdas Anak • Omega 3 Herbal - Diamant Origo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Inter:wght@400;500;600&amp;display=swap');
+
+      :root {
+        --gold: #d4af37;
+      }
+
+      body {
+        font-family: 'Inter', system_ui, sans-serif;
+      }
+      .heading-font {
+        font-family: 'Playfair Display', sans-serif;
+      }
+
+      .hero-bg {
+        background: linear-gradient(135deg, #0b1320 0%, #111c2d 100%);
+      }
+      .gold-glow {
+        text-shadow: 0 0 30px rgba(212, 175, 55, 0.7);
+      }
+
+      /* Enhanced Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fadeInUp {
+        animation: fadeInUp 0.8s backwards;
+      }
+
+      .card-hover {
+        transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+      .card-hover:hover {
+        transform: scale(1.05) translateY(-12px);
+        box-shadow: 0 30px 70px -15px rgb(212 175 55 / 0.2);
+      }
+
+      .swiper-slide {
+        transition: transform 0.6s ease;
+      }
+      .swiper-slide:hover {
+        transform: scale(1.04);
+      }
+
+      .nav-link {
+        position: relative;
+      }
+      .nav-link:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background-color: var(--gold);
+        transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .nav-link:hover:after,
+      .nav-link.active:after {
+        width: 100%;
+      }
+
+      /* Mobile menu smooth */
+      #mobile-menu {
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      /* Square images for carousels */
+      .gallery-img {
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body class="bg-zinc-950 text-white overflow-x-hidden">
+    <!-- NAVBAR -->
+    <nav class="bg-zinc-900 border-b border-zinc-800 sticky top-0 z-50">
+      <div
+        class="max-w-screen-2xl mx-auto px-5 md:px-8 py-5 flex items-center justify-between"
+      >
+        <div class="flex items-center gap-x-3">
+          <!-- Diamant Logo -->
+          <img
+            src="https://dongkrakusaha.com/gambarbebas/1526720260226-034358_logo-diamant-only.png"
+            alt="Diamant Origo"
+            class="h-9 w-auto"
+          />Diamant Origo Inc.
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+          <a href="#masalah" class="nav-link text-zinc-300 hover:text-white"
+            >Kenapa Khawatir?</a
+          >
+          <a href="#solusi" class="nav-link text-zinc-300 hover:text-white"
+            >Solusi Kami</a
+          >
+          <a href="#galeri" class="nav-link text-zinc-300 hover:text-white"
+            >Galeri</a
+          >
+          <a href="#testimoni" class="nav-link text-zinc-300 hover:text-white"
+            >Testimoni</a
+          >
+          <a href="#harga" class="nav-link text-zinc-300 hover:text-white"
+            >Harga</a
+          >
+        </div>
+
+        <div class="flex items-center gap-x-4">
+          <a
+            href="https://wa.me/628119950205?text=Halo%20saya%20ingin%20konsultasi%20Telur%20Cerdas"
+            target="_blank"
+            class="bg-[#d4af37] hover:bg-amber-300 transition-all text-zinc-950 font-semibold px-6 py-3 rounded-3xl flex items-center gap-x-2 text-sm"
+          >
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            <span class="hidden sm:inline">Hubungi WA</span>
+          </a>
+
+          <button id="menu-btn" class="md:hidden text-3xl text-white">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-zinc-900 border-t border-zinc-700 px-5 py-8 flex flex-col gap-y-6 text-lg"
+      >
+        <a href="#masalah" class="nav-link">Kenapa Khawatir?</a>
+        <a href="#solusi" class="nav-link">Solusi Kami</a>
+        <a href="#galeri" class="nav-link">Galeri Bukti</a>
+        <a href="#testimoni" class="nav-link">Testimoni</a>
+        <a href="#harga" class="nav-link">Harga & Paket</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section
+      class="hero-bg min-h-screen flex items-center relative pt-16 md:pt-0"
+    >
+      <div
+        class="max-w-screen-2xl mx-auto px-5 md:px-8 grid md:grid-cols-2 gap-12 items-center"
+      >
+        <div class="space-y-8 md:space-y-10">
+          <div
+            class="inline-flex items-center gap-2 bg-zinc-800 border border-[#d4af37]/30 rounded-full px-5 py-2 text-sm"
+          >
+            <div
+              class="w-3 h-3 bg-emerald-400 rounded-full animate-pulse"
+            ></div>
+            <span class="font-medium">Fresh Every Day • Jabodetabek</span>
+          </div>
+
+          <h1
+            class="heading-font text-5xl md:text-6xl lg:text-7xl leading-none font-bold tracking-tighter animate-fadeInUp"
+          >
+            Sudah kasih yang
+            <span class="text-[#d4af37] gold-glow">TERBAIK</span><br />untuk
+            otak anak hari ini?
+          </h1>
+
+          <p
+            class="text-xl text-zinc-300 max-w-lg animate-fadeInUp"
+            style="animation-delay: 200ms"
+          >
+            Omega 3 herbal alami dalam telur harian. Praktis, gurih, kuning
+            cerah. Solusi ibu modern untuk anak cerdas.
+          </p>
+
+          <div
+            class="flex flex-col sm:flex-row gap-4 animate-fadeInUp"
+            style="animation-delay: 400ms"
+          >
+            <a
+              href="https://wa.me/628119950205?text=Saya%20mau%20Trial%2010%20Butir%20Telur%20Cerdas"
+              target="_blank"
+              class="bg-[#d4af37] hover:bg-amber-300 transition-all text-zinc-950 font-bold text-lg px-10 py-6 rounded-3xl flex items-center justify-center gap-x-3 shadow-xl shadow-[#d4af37]/30"
+            >
+              Coba Trial 10 Butir
+              <i
+                class="fa-solid fa-arrow-right group-active:rotate-45 transition"
+              ></i>
+            </a>
+            <a
+              href="#harga"
+              class="border-2 border-[#d4af37] hover:bg-white/10 transition-all text-[#d4af37] font-semibold text-lg px-10 py-6 rounded-3xl text-center"
+            >
+              Lihat Harga
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Image -->
+        <div
+          class="relative flex justify-center animate-fadeInUp"
+          style="animation-delay: 300ms"
+        >
+          <img
+            src="https://dongkrakusaha.com/gambarbebas/1526720260226-034053_Omega3 herbal front.png"
+            alt="Telur Cerdas Omega 3 Herbal"
+            class="w-full max-w-[380px] md:max-w-[460px] rounded-3xl shadow-2xl border border-[#d4af37]/20"
+          />
+
+          <!-- Floating Telur Cerdas Logo -->
+          <div
+            class="absolute -top-6 -right-6 bg-zinc-900 border-4 border-[#d4af37] rounded-full p-3 shadow-2xl"
+          >
+            <img
+              src="https://dongkrakusaha.com/gambarbebas/1526720260226-031715_maskot.webp"
+              alt="Maskot Telur Cerdas"
+              class="w-20 h-20 object-contain"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <div class="bg-zinc-900 py-8 border-b border-zinc-800">
+      <div
+        class="max-w-screen-2xl mx-auto px-5 grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
+      >
+        <div class="animate-fadeInUp" style="animation-delay: 100ms">
+          <div class="text-4xl font-bold text-[#d4af37]">21+</div>
+          <div class="text-xs text-zinc-400">Vendor Terpercaya</div>
+        </div>
+        <div class="animate-fadeInUp" style="animation-delay: 200ms">
+          <div class="text-4xl font-bold text-[#d4af37]">10+</div>
+          <div class="text-xs text-zinc-400">Varian Nutrisi</div>
+        </div>
+        <div class="animate-fadeInUp" style="animation-delay: 300ms">
+          <div class="text-4xl font-bold text-[#d4af37]">Depok</div>
+          <div class="text-xs text-zinc-400">Area Utama</div>
+        </div>
+        <div class="animate-fadeInUp" style="animation-delay: 400ms">
+          <div class="text-4xl font-bold text-[#d4af37]">Jabodetabek</div>
+          <div class="text-xs text-zinc-400">Pengiriman Cepat</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROBLEM -->
+    <section id="masalah" class="py-20 bg-zinc-950">
+      <div class="max-w-screen-2xl mx-auto px-5">
+        <div class="text-center mb-12">
+          <h2 class="heading-font text-4xl md:text-5xl font-bold">
+            Kenapa Banyak Ibu Khawatir?
+          </h2>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div
+            class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 card-hover animate-fadeInUp"
+            style="animation-delay: 100ms"
+          >
+            <i class="fa-solid fa-fish text-5xl text-rose-400 mb-6"></i>
+            <h3 class="font-semibold text-xl mb-2">Anak susah makan ikan</h3>
+            <p class="text-zinc-400 text-sm">
+              Rewel tiap disuruh makan salmon atau sup ikan.
+            </p>
+          </div>
+          <div
+            class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 card-hover animate-fadeInUp"
+            style="animation-delay: 200ms"
+          >
+            <i class="fa-solid fa-brain text-5xl text-rose-400 mb-6"></i>
+            <h3 class="font-semibold text-xl mb-2">Kurang Omega 3</h3>
+            <p class="text-zinc-400 text-sm">
+              Takut otak & konsentrasi tidak optimal.
+            </p>
+          </div>
+          <div
+            class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 card-hover animate-fadeInUp"
+            style="animation-delay: 300ms"
+          >
+            <i class="fa-solid fa-clock text-5xl text-rose-400 mb-6"></i>
+            <h3 class="font-semibold text-xl mb-2">Ribet setiap hari</h3>
+            <p class="text-zinc-400 text-sm">
+              Harus masak khusus atau beli suplemen mahal.
+            </p>
+          </div>
+          <div
+            class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 card-hover animate-fadeInUp"
+            style="animation-delay: 400ms"
+          >
+            <i class="fa-solid fa-store text-5xl text-rose-400 mb-6"></i>
+            <h3 class="font-semibold text-xl mb-2">Kualitas tidak pasti</h3>
+            <p class="text-zinc-400 text-sm">
+              Telur pasar biasa belum tentu bergizi ekstra.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOLUTION -->
+    <section id="solusi" class="py-20 bg-[#0b1320]">
+      <div class="max-w-screen-2xl mx-auto px-5">
+        <div class="grid md:grid-cols-12 gap-12 items-center">
+          <div class="md:col-span-5">
+            <h2
+              class="heading-font text-4xl md:text-5xl font-bold leading-none"
+            >
+              Solusi Cerdas:<br /><span class="text-[#d4af37]"
+                >Telur Cerdas Anak</span
+              >
+            </h2>
+            <p class="mt-6 text-lg text-zinc-300">
+              Ayam berpakan herbal khusus kaya Omega 3 alami. Telur segar setiap
+              hari untuk otak anak yang lebih cerdas.
+            </p>
+          </div>
+          <div class="md:col-span-7">
+            <img
+              src="https://dongkrakusaha.com/gambarbebas/1526720260222-115836_tc Face up product.png"
+              alt="Telur Cerdas"
+              class="rounded-3xl w-full shadow-2xl"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY CAROUSEL (3 per view on desktop, square 1:1) -->
+    <section id="galeri" class="py-20 bg-zinc-950">
+      <div class="max-w-screen-2xl mx-auto px-5">
+        <div class="text-center mb-10">
+          <span class="text-[#d4af37] font-medium tracking-widest"
+            >BUKTI VISUAL</span
+          >
+          <h2 class="heading-font text-4xl md:text-5xl font-bold mt-2">
+            Perbandingan Nyata
+          </h2>
+        </div>
+
+        <div class="swiper gallery-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                src="https://dongkrakusaha.com/gambarbebas/1526720260223-120141_yolk%20telur%20cerdas.JPG"
+                class="gallery-img w-full rounded-3xl"
+                alt="Kuning Telur Cerdas"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://dongkrakusaha.com/gambarbebas/1526720260223-120141_yolk%20telur%20biasa.JPG"
+                class="gallery-img w-full rounded-3xl"
+                alt="Kuning Telur Biasa"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://dongkrakusaha.com/gambarbebas/1526720260222-115836_selenium%20egg%202.JPG"
+                class="gallery-img w-full rounded-3xl"
+                alt="Selenium Egg"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://dongkrakusaha.com/gambarbebas/1526720260223-121200_telur%20cerdas%20vs%20table%20eggs.png"
+                class="gallery-img w-full rounded-3xl"
+                alt="Perbandingan"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://dongkrakusaha.com/gambarbebas/1526720260223-120911_telur%20cerdas%20zoom%201.JPG"
+                class="gallery-img w-full rounded-3xl"
+                alt="Zoom Telur Cerdas"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://dongkrakusaha.com/gambarbebas/1526720260223-120911_telur%20cerdas%20face%20up%201.jpeg"
+                class="gallery-img w-full rounded-3xl"
+                alt="Face Up"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://dongkrakusaha.com/gambarbebas/1526720260222-115837_telur%20cerdas%202.JPG"
+                class="gallery-img w-full rounded-3xl"
+                alt="Telur Cerdas 2"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://dongkrakusaha.com/gambarbebas/1526720260223-120911_dus%20package.JPG"
+                class="gallery-img w-full rounded-3xl"
+                alt="Packaging"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIAL CAROUSEL (3 per view on desktop, square profile) -->
+    <section id="testimoni" class="py-20 bg-[#111c2d]">
+      <div class="max-w-screen-2xl mx-auto px-5">
+        <div class="text-center mb-12">
+          <span class="text-[#d4af37]">REAL STORY DARI ORANG TUA</span>
+          <h2 class="heading-font text-4xl md:text-5xl font-bold mt-3">
+            Apa Kata Mereka?
+          </h2>
+        </div>
+
+        <div class="swiper testimonial-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="bg-zinc-900 rounded-3xl p-8 h-full flex flex-col">
+                <div class="flex justify-center mb-6">
+                  <img
+                    src="https://picsum.photos/id/64/300/300"
+                    class="w-24 h-24 rounded-2xl object-cover border-4 border-[#d4af37]"
+                    alt=""
+                  />
+                </div>
+                <p class="italic text-zinc-200 flex-1">
+                  "Anak saya sangat suka Telur Cerdas karena tidak amis dan
+                  tidak alergi. Rasanya segar dan gurih!"
+                </p>
+                <div class="mt-8">
+                  <div class="font-semibold">drh. Lina Maryana</div>
+                  <div class="text-sm text-emerald-400">Dokter Hewan</div>
+                  <div class="text-amber-400">★★★★★</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-zinc-900 rounded-3xl p-8 h-full flex flex-col">
+                <div class="flex justify-center mb-6">
+                  <img
+                    src="https://picsum.photos/id/1015/300/300"
+                    class="w-24 h-24 rounded-2xl object-cover border-4 border-[#d4af37]"
+                    alt=""
+                  />
+                </div>
+                <p class="italic text-zinc-200 flex-1">
+                  "Kualitas luar biasa! Kuning cerah, tekstur padat. Cocok untuk
+                  semua menu sehat di cafe saya."
+                </p>
+                <div class="mt-8">
+                  <div class="font-semibold">Priskila</div>
+                  <div class="text-sm text-emerald-400">Owner Healthy Cafe</div>
+                  <div class="text-amber-400">★★★★★</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-zinc-900 rounded-3xl p-8 h-full flex flex-col">
+                <div class="flex justify-center mb-6">
+                  <img
+                    src="https://picsum.photos/id/201/300/300"
+                    class="w-24 h-24 rounded-2xl object-cover border-4 border-[#d4af37]"
+                    alt=""
+                  />
+                </div>
+                <p class="italic text-zinc-200 flex-1">
+                  "Anak-anak jadi lebih aktif dan cepat belajar. Terima kasih
+                  Telur Cerdas!"
+                </p>
+                <div class="mt-8">
+                  <div class="font-semibold">Natassya Paramita</div>
+                  <div class="text-sm text-emerald-400">Office Manager</div>
+                  <div class="text-amber-400">★★★★</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-zinc-900 rounded-3xl p-8 h-full flex flex-col">
+                <div class="flex justify-center mb-6">
+                  <img
+                    src="https://picsum.photos/id/237/300/300"
+                    class="w-24 h-24 rounded-2xl object-cover border-4 border-[#d4af37]"
+                    alt=""
+                  />
+                </div>
+                <p class="italic text-zinc-200 flex-1">
+                  "Saya tidak pernah absen stok Telur Cerdas. Anak-anak suka dan
+                  saya tenang dengan nutrisinya."
+                </p>
+                <div class="mt-8">
+                  <div class="font-semibold">dr. Fernando Sp.A</div>
+                  <div class="text-sm text-emerald-400">Dokter Anak</div>
+                  <div class="text-amber-400">★★★★★</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination mt-10"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="harga" class="py-20 bg-zinc-950">
+      <div class="max-w-screen-2xl mx-auto px-5 text-center">
+        <h2 class="heading-font text-4xl md:text-5xl font-bold">
+          Paket Trial 10 Butir
+        </h2>
+        <div
+          class="max-w-md mx-auto mt-12 bg-gradient-to-b from-zinc-900 to-black border border-[#d4af37]/30 rounded-3xl p-10 card-hover"
+        >
+          <div class="text-7xl font-bold text-[#d4af37]">Rp 43.000</div>
+          <div class="text-zinc-400 line-through text-2xl">Rp 50.000</div>
+          <ul class="mt-10 space-y-5 text-left text-sm">
+            <li class="flex items-center gap-4">
+              <i class="fa-solid fa-check text-emerald-400"></i>10 Butir Telur
+              Cerdas Omega 3
+            </li>
+            <li class="flex items-center gap-4">
+              <i class="fa-solid fa-check text-emerald-400"></i>Pengiriman
+              Jabodetabek
+            </li>
+            <li class="flex items-center gap-4">
+              <i class="fa-solid fa-check text-emerald-400"></i>Segar Maksimal
+              24 Jam
+            </li>
+            <li class="flex items-center gap-4">
+              <i class="fa-solid fa-check text-emerald-400"></i>Garansi Puas
+              atau Ganti
+            </li>
+          </ul>
+          <a
+            href="https://wa.me/628119950205?text=Saya%20mau%20pesan%20Trial%2010%20Butir%20Telur%20Cerdas"
+            target="_blank"
+            class="mt-10 block w-full bg-[#d4af37] hover:bg-amber-300 text-zinc-950 font-bold py-6 rounded-3xl text-xl transition-all"
+          >
+            PESAN TRIAL SEKARANG
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section
+      class="py-20 bg-gradient-to-br from-[#111c2d] to-zinc-950 text-center"
+    >
+      <h2 class="heading-font text-4xl md:text-5xl font-bold max-w-2xl mx-auto">
+        Mulai hari ini juga dengan Trial 10 Butir
+      </h2>
+      <a
+        href="https://wa.me/628119950205?text=Saya%20siap%20order%20Telur%20Cerdas"
+        target="_blank"
+        class="mt-10 inline-flex items-center gap-4 bg-white text-zinc-950 font-bold text-2xl px-16 py-7 rounded-3xl hover:scale-110 transition-all"
+      >
+        <i class="fa-brands fa-whatsapp text-4xl"></i>
+        Order via WhatsApp
+      </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-12 text-center text-sm text-zinc-400">
+      © 2026 Telur Cerdas by Diamant Origo Inc. All Rights Reserved.
+    </footer>
+
+    <!-- FLOATING WA -->
+    <a
+      href="https://wa.me/628119950205?text=Halo%20Diamant%20saya%20ingin%20beli%20Telur%20Cerdas"
+      target="_blank"
+      class="fixed bottom-6 right-6 z-50 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-2xl hover:scale-125 transition-all"
+    >
+      <i class="fa-brands fa-whatsapp text-white text-4xl"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      // Mobile Menu
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      let isOpen = false;
+      menuBtn.addEventListener('click', () => {
+        isOpen = !isOpen;
+        mobileMenu.classList.toggle('hidden', !isOpen);
+        menuBtn.innerHTML = isOpen
+          ? '<i class="fa-solid fa-xmark"></i>'
+          : '<i class="fa-solid fa-bars"></i>';
+      });
+
+      // Gallery Swiper - 3 views on desktop, square 1:1
+      const gallerySwiper = new Swiper('.gallery-swiper', {
+        loop: true,
+        autoplay: { delay: 3000, disableOnInteraction: false },
+        slidesPerView: 1,
+        spaceBetween: 20,
+        breakpoints: {
+          640: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        },
+        effect: 'slide',
+        speed: 800,
+      });
+
+      // Testimonial Swiper - 3 views on desktop
+      new Swiper('.testimonial-swiper', {
+        loop: true,
+        autoplay: { delay: 4500, disableOnInteraction: false },
+        slidesPerView: 1,
+        spaceBetween: 30,
+        pagination: { el: '.swiper-pagination', clickable: true },
+        breakpoints: {
+          1024: { slidesPerView: 3 },
+        },
+        speed: 900,
+      });
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener('click', function (e) {
+          if (this.getAttribute('href') !== '#') {
+            e.preventDefault();
+            document
+              .querySelector(this.getAttribute('href'))
+              .scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

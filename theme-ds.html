@@ -6,12 +6,12 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
     />
-    <title>Telur Cerdas · Omega3 Herbal · Diamant Origo</title>
+    <title>Telur Cerdas Anak | Omega 3 Herbal - Diamant</title>
     <!-- Font & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
       rel="stylesheet"
     />
     <link
@@ -19,7 +19,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <style>
-      /* RESET & VARIABEL */
       * {
         margin: 0;
         padding: 0;
@@ -28,7 +27,7 @@
 
       body {
         font-family: 'Inter', sans-serif;
-        background-color: #0a0e17;
+        background-color: #0b1320;
         color: #ffffff;
         line-height: 1.5;
       }
@@ -37,29 +36,28 @@
         --gold: #d4af37;
         --gold-light: #f5d97a;
         --gold-dark: #b48c2c;
-        --bg-dark: #0a0e17;
-        --bg-card: #151f2f;
-        --bg-nav: #101826;
-        --border-glow: rgba(212, 175, 55, 0.25);
+        --dark: #0b1320;
+        --navy: #111c2d;
+        --card-bg: #1a2538;
+        --border-glow: rgba(212, 175, 55, 0.3);
       }
 
-      /* UTILITY */
+      /* container */
       .container {
-        width: 100%;
         max-width: 1280px;
         margin: 0 auto;
-        padding: 0 20px;
+        padding: 0 5%;
       }
 
       section {
-        padding: 60px 0;
+        padding: 70px 0;
       }
 
       .section-title {
-        font-size: 2rem;
+        font-size: 2.2rem;
         font-weight: 700;
         text-align: center;
-        margin-bottom: 2.5rem;
+        margin-bottom: 3rem;
       }
 
       .section-title span {
@@ -70,19 +68,18 @@
 
       .btn {
         display: inline-block;
-        padding: 14px 30px;
+        padding: 14px 32px;
         border-radius: 50px;
         font-weight: 600;
         text-decoration: none;
         transition: all 0.3s ease;
         border: 2px solid transparent;
         font-size: 1rem;
-        cursor: pointer;
       }
 
       .btn-gold {
         background: var(--gold);
-        color: #0a0e17;
+        color: #0b1320;
         box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
       }
 
@@ -100,72 +97,69 @@
 
       .btn-outline:hover {
         background: var(--gold);
-        color: #0a0e17;
+        color: #0b1320;
         transform: translateY(-3px);
       }
 
-      /* NAVBAR */
+      /* navbar */
       nav {
-        background: rgba(16, 24, 38, 0.95);
-        backdrop-filter: blur(10px);
-        padding: 16px 20px;
+        background: var(--navy);
+        padding: 16px 5%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         position: sticky;
         top: 0;
         z-index: 1000;
         border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
       }
 
       .logo-area {
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 15px;
       }
 
       .logo-diamant {
         font-weight: 800;
-        font-size: 1.3rem;
-        background: linear-gradient(135deg, #fff, var(--gold));
+        font-size: 1.5rem;
+        background: linear-gradient(135deg, #fff 30%, var(--gold) 80%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         border-right: 2px solid var(--gold);
-        padding-right: 12px;
+        padding-right: 15px;
       }
 
       .logo-telurcerdas {
         display: flex;
         flex-direction: column;
-      }
-
-      .logo-telurcerdas .brand {
-        font-weight: 800;
-        font-size: 1rem;
-        color: var(--gold);
-        text-transform: uppercase;
         line-height: 1.2;
       }
 
+      .logo-telurcerdas .brand {
+        font-size: 1.2rem;
+        font-weight: 800;
+        color: var(--gold);
+        text-transform: uppercase;
+      }
+
       .logo-telurcerdas .tagline {
-        font-size: 0.65rem;
+        font-size: 0.7rem;
         color: #aaa;
-        letter-spacing: 0.5px;
+        letter-spacing: 1px;
       }
 
       .nav-menu {
         display: flex;
+        gap: 28px;
         align-items: center;
-        gap: 16px;
-        flex-wrap: wrap;
       }
 
       .nav-menu a {
-        color: #ddd;
+        color: #e0e0e0;
         text-decoration: none;
         font-weight: 500;
-        font-size: 0.9rem;
+        font-size: 0.95rem;
         transition: color 0.2s;
       }
 
@@ -175,40 +169,40 @@
 
       .nav-contact {
         background: rgba(212, 175, 55, 0.1);
-        border: 1px solid var(--gold);
+        padding: 8px 20px;
         border-radius: 40px;
-        padding: 6px 18px;
-        font-weight: 600;
+        border: 1px solid var(--gold);
+        font-weight: 600 !important;
         color: var(--gold) !important;
       }
 
-      /* HERO */
+      /* hero */
       .hero {
         display: flex;
         align-items: center;
-        gap: 40px;
+        gap: 50px;
         flex-wrap: wrap;
-        padding: 20px 0 40px;
+        padding: 40px 0;
       }
 
       .hero-text {
-        flex: 1 1 350px;
+        flex: 1 1 400px;
       }
 
-      .hero-badge {
-        display: inline-block;
+      .hero-text .badge {
         background: rgba(212, 175, 55, 0.15);
-        border: 1px solid rgba(212, 175, 55, 0.4);
         color: var(--gold);
-        padding: 6px 18px;
+        padding: 6px 16px;
         border-radius: 40px;
         font-size: 0.85rem;
         font-weight: 600;
+        display: inline-block;
         margin-bottom: 20px;
+        border: 1px solid rgba(212, 175, 55, 0.4);
       }
 
       .hero-text h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
         font-weight: 800;
         line-height: 1.2;
         margin-bottom: 20px;
@@ -221,9 +215,9 @@
       }
 
       .hero-text p {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         color: #b0b7c5;
-        margin-bottom: 30px;
+        margin-bottom: 35px;
         max-width: 500px;
       }
 
@@ -231,117 +225,47 @@
         flex: 1 1 300px;
         display: flex;
         justify-content: center;
+        filter: drop-shadow(0 20px 30px rgba(212, 175, 55, 0.3));
       }
 
       .hero-image img {
         max-width: 100%;
-        width: 380px;
-        filter: drop-shadow(0 20px 30px rgba(212, 175, 55, 0.3));
-        animation: float 5s ease-in-out infinite;
+        width: 400px;
+        animation: float 6s ease-in-out infinite;
       }
 
       @keyframes float {
         0% {
-          transform: translateY(0);
+          transform: translateY(0px);
         }
         50% {
-          transform: translateY(-12px);
+          transform: translateY(-15px);
         }
         100% {
-          transform: translateY(0);
+          transform: translateY(0px);
         }
       }
 
-      /* STATS */
-      .stats-grid {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 30px 50px;
-        background: rgba(21, 31, 47, 0.8);
-        backdrop-filter: blur(4px);
-        padding: 30px 30px;
-        border-radius: 60px;
-        margin: 40px 0;
-        border: 1px solid rgba(212, 175, 55, 0.2);
-      }
-
-      .stat-item {
-        text-align: center;
-      }
-
-      .stat-number {
-        font-size: 2.2rem;
-        font-weight: 800;
-        color: var(--gold);
-        line-height: 1;
-      }
-
-      .stat-label {
-        font-size: 0.9rem;
-        color: #b0b7c5;
-      }
-
-      /* ABOUT */
-      .about-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-        align-items: center;
-      }
-
-      .about-highlight {
-        border-left: 4px solid var(--gold);
-        padding-left: 25px;
-      }
-
-      .about-highlight li {
-        list-style: none;
-        margin: 15px 0;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        color: #ccd6e0;
-      }
-
-      .about-highlight i {
-        color: var(--gold);
-        font-size: 1.3rem;
-      }
-
-      .about-card {
-        background: #1f2a3c;
-        padding: 35px 25px;
-        border-radius: 30px;
-        border-left: 6px solid var(--gold);
-        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
-      }
-
-      .about-card p {
-        font-size: 1.2rem;
-        font-style: italic;
-        color: #e0e7ff;
-      }
-
-      /* CARD GRID */
+      /* grid cards */
       .card-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 25px;
       }
 
       .card {
-        background: #1f2a3c;
-        padding: 25px 15px;
-        border-radius: 24px;
-        text-align: center;
-        border: 1px solid #2f3b4e;
+        background: var(--navy);
+        padding: 30px 20px;
+        border-radius: 16px;
+        border-left: 4px solid var(--gold);
         transition: 0.3s;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        text-align: center;
       }
 
       .card:hover {
-        border-color: var(--gold);
         transform: translateY(-5px);
+        border-left-width: 8px;
       }
 
       .card i {
@@ -350,14 +274,13 @@
         margin-bottom: 15px;
       }
 
-      .card h3 {
-        font-size: 1rem;
-        font-weight: 600;
+      .card p {
+        font-weight: 500;
       }
 
-      /* CAROUSEL UMUM */
+      /* testimonial carousel */
       .carousel-section {
-        background: #0f172a;
+        background: #0f1a2b;
       }
 
       .carousel-container {
@@ -384,7 +307,7 @@
         width: 100%;
         height: 300px;
         object-fit: cover;
-        border-radius: 24px;
+        border-radius: 20px;
         border: 1px solid var(--gold);
       }
 
@@ -398,7 +321,7 @@
         width: 44px;
         height: 44px;
         border-radius: 50%;
-        font-size: 1.8rem;
+        font-size: 2rem;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -430,27 +353,22 @@
         width: 10px;
         height: 10px;
         border-radius: 20px;
-        background: #3f4b5e;
+        background: #3a4556;
         cursor: pointer;
         transition: 0.2s;
       }
 
       .dot.active {
         background: var(--gold);
-        width: 28px;
+        width: 30px;
       }
 
-      /* TESTIMONIAL CARD */
-      .testi-carousel .carousel-item {
-        padding: 10px;
-      }
-
+      /* testimonial card */
       .testimonial-card {
         background: #1f2a3c;
         border-radius: 30px;
-        padding: 30px 25px;
+        padding: 35px 30px;
         border: 1px solid #3e4b60;
-        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
       }
 
       .testi-profile {
@@ -471,13 +389,6 @@
         font-size: 1.8rem;
         color: var(--gold);
         border: 2px solid var(--gold);
-        overflow: hidden;
-      }
-
-      .testi-avatar img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
       }
 
       .testi-name h4 {
@@ -493,13 +404,12 @@
       .testi-rating {
         color: var(--gold);
         margin-bottom: 15px;
-        font-size: 1.1rem;
       }
 
       .testi-message {
         font-style: italic;
         color: #d0daea;
-        line-height: 1.6;
+        font-size: 1.1rem;
       }
 
       .testi-message i {
@@ -508,16 +418,15 @@
         margin-right: 5px;
       }
 
-      /* PRICING */
+      /* pricing */
       .pricing-card {
-        background: linear-gradient(145deg, #1f2a3f, #131d2f);
+        background: var(--navy);
         max-width: 480px;
         margin: 0 auto;
         padding: 45px 35px;
-        border-radius: 50px;
+        border-radius: 30px;
         border: 1px solid var(--gold);
         text-align: center;
-        box-shadow: 0 30px 40px rgba(0, 0, 0, 0.6);
       }
 
       .price {
@@ -532,29 +441,29 @@
         color: #aaa;
       }
 
-      /* FOOTER */
-      footer {
-        background: #070c14;
-        padding: 40px 20px;
+      /* final cta */
+      .cta-final {
+        background: linear-gradient(90deg, #111c2d, #0b1320);
         text-align: center;
-        border-top: 1px solid #2a3442;
-        color: #7f8a9e;
       }
 
-      /* RESPONSIVE */
+      /* footer */
+      footer {
+        background: #000;
+        text-align: center;
+        padding: 30px 5%;
+        color: #aaa;
+      }
+
+      /* responsive */
       @media (max-width: 768px) {
-        section {
-          padding: 50px 0;
-        }
         .hero-text h1 {
-          font-size: 2.2rem;
+          font-size: 2.5rem;
         }
-        .stats-grid {
-          border-radius: 40px;
-          gap: 20px;
-        }
-        .about-grid {
-          grid-template-columns: 1fr;
+        .nav-menu {
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 15px;
         }
         .carousel-item img {
           height: 220px;
@@ -562,33 +471,15 @@
         .carousel-btn {
           width: 36px;
           height: 36px;
-          font-size: 1.4rem;
-        }
-        .btn {
-          padding: 12px 24px;
-        }
-        .nav-menu {
-          justify-content: center;
-          margin-top: 10px;
-          width: 100%;
+          font-size: 1.5rem;
         }
       }
-
       @media (max-width: 480px) {
         .hero-text h1 {
-          font-size: 1.9rem;
+          font-size: 2rem;
         }
         .section-title {
           font-size: 1.8rem;
-        }
-        .stat-number {
-          font-size: 1.8rem;
-        }
-        .pricing-card {
-          padding: 30px 20px;
-        }
-        .price {
-          font-size: 3rem;
         }
       }
     </style>
@@ -618,16 +509,17 @@
       </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <section style="padding-top: 20px">
+    <!-- HERO -->
+    <section style="padding-top: 30px">
       <div class="container">
         <div class="hero">
           <div class="hero-text">
-            <span class="hero-badge"
+            <span class="badge"
               ><i class="fas fa-egg"></i> Omega 3 Herbal Eggs</span
             >
             <h1>
-              Sudah Kasih yang <span>Terbaik</span> untuk Otaknya Hari Ini?
+              Sudah Kasih yang <span>Terbaik</span> untuk Tumbuh Kembang Otaknya
+              Hari Ini?
             </h1>
             <p>
               Omega 3 herbal dalam telur harian — praktis, tanpa drama makan
@@ -643,149 +535,81 @@
                 href="https://wa.me/628119950205?text=Halo%20saya%20ingin%20konsultasi%20Telur%20Cerdas"
                 class="btn btn-outline"
                 style="margin-left: 10px"
-                >Konsultasi</a
+                >Konsultasi via WA</a
               >
             </div>
           </div>
           <div class="hero-image">
-            <!-- Gambar utama produk (placeholder jika tidak ada) -->
+            <!-- Gambar hero dari file Omega3 herbal front.png -->
             <img
-              src="https://dongkrakusaha.com/gambarbebas/1526720260223-121200_telur cerdas vs table eggs.png"
-              alt="Telur Cerdas Omega3"
+              src="Omega3 herbal front.png"
+              alt="Omega3 Herbal Eggs"
               onerror="
                 this.src =
-                  'https://via.placeholder.com/400x400?text=Telur+Cerdas'
+                  'https://via.placeholder.com/400x400?text=Omega3+Herbal+Eggs'
               "
             />
           </div>
         </div>
-
-        <!-- STATISTIK -->
-        <div class="stats-grid">
-          <div class="stat-item">
-            <span class="stat-number">21+</span>
-            <span class="stat-label">Vendor</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">10+</span>
-            <span class="stat-label">Varian Telur</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">Depok</span>
-            <span class="stat-label">Area Vendor</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">Jabodetabek</span>
-            <span class="stat-label">Distribusi</span>
-          </div>
-        </div>
       </div>
     </section>
 
-    <!-- TENTANG KAMI -->
+    <!-- PROBLEM -->
     <section>
-      <div class="container">
-        <div class="about-grid">
-          <div>
-            <h2 class="section-title" style="text-align: left">
-              Tentang Kami <span>Bisnis Berdampak</span>
-            </h2>
-            <p style="color: #ccd6e0; margin-bottom: 25px">
-              Kami bergerak di jasa pemasaran digital berbasis website dan
-              penyediaan produk pangan protein berkualitas. Telur Cerdas adalah
-              wujud nyata komitmen kami terhadap gizi anak bangsa.
-            </p>
-            <ul class="about-highlight">
-              <li>
-                <i class="fas fa-check-circle"></i> Meningkatkan visibilitas
-                online bisnis lokal
-              </li>
-              <li>
-                <i class="fas fa-chart-line"></i> Mendatangkan traffic yang
-                relevan & berkualitas
-              </li>
-              <li>
-                <i class="fas fa-egg"></i> Distribusi produk telur fungsional
-                berkualitas
-              </li>
-            </ul>
-          </div>
-          <div class="about-card">
-            <i
-              class="fas fa-quote-right"
-              style="
-                font-size: 2.5rem;
-                color: var(--gold);
-                opacity: 0.5;
-                margin-bottom: 15px;
-              "
-            ></i>
-            <p>
-              "Mitra Pertumbuhan Bisnis Digital Anda — spesialis pemasaran
-              digital & telur berkualitas."
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROBLEM & SOLUSI (GRID CARD) -->
-    <section style="background: #0f172a">
       <div class="container">
         <h2 class="section-title">Kenapa Banyak Ibu <span>Khawatir?</span></h2>
         <div class="card-grid">
           <div class="card">
             <i class="fas fa-fish"></i>
-            <h3>Anak susah makan ikan</h3>
+            <p>Anak susah makan ikan.</p>
           </div>
           <div class="card">
             <i class="fas fa-brain"></i>
-            <h3>Takut kurang Omega 3</h3>
+            <p>Takut kurang Omega 3 untuk perkembangan otak.</p>
           </div>
           <div class="card">
             <i class="fas fa-clock"></i>
-            <h3>Ingin solusi praktis</h3>
+            <p>Ingin solusi praktis tanpa ribet.</p>
           </div>
           <div class="card">
             <i class="fas fa-leaf"></i>
-            <h3>Kualitas terkontrol</h3>
+            <p>Ingin produk dengan kualitas lebih terkontrol.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section>
+    <!-- SOLUTION -->
+    <section style="background: #0f1a2b">
       <div class="container">
         <h2 class="section-title">Solusi: <span>Telur Cerdas Anak</span></h2>
         <div class="card-grid">
           <div class="card">
             <i class="fas fa-seedling"></i>
-            <h3>Ayam berpakan herbal</h3>
+            <p>Ayam berpakan herbal terkontrol.</p>
           </div>
           <div class="card">
             <i class="fas fa-droplet"></i>
-            <h3>Omega 3 alami tinggi</h3>
+            <p>Mengandung Omega 3 alami.</p>
           </div>
           <div class="card">
             <i class="fas fa-bread-slice"></i>
-            <h3>Mudah dikonsumsi</h3>
+            <p>Mudah dikonsumsi setiap hari.</p>
           </div>
           <div class="card">
             <i class="fas fa-balance-scale"></i>
-            <h3>Pola makan seimbang</h3>
+            <p>Bagian dari pola makan seimbang.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CAROUSEL GALLERY PRODUK (dengan gambar dari URL) -->
+    <!-- CAROUSEL GALLERY PRODUK (gambar dari URL yang diberikan) -->
     <section class="carousel-section">
       <div class="container">
         <h2 class="section-title">Gallery <span>Telur Cerdas</span></h2>
         <div class="carousel-container" id="productCarousel">
-          <div class="carousel-track" id="productTrack">
-            <!-- gambar akan diisi javascript dari array, agar lebih rapi kita buat via JS -->
-          </div>
+          <div class="carousel-track" id="productTrack"></div>
           <button class="carousel-btn prev" id="prodPrev">❮</button>
           <button class="carousel-btn next" id="prodNext">❯</button>
         </div>
@@ -796,7 +620,7 @@
     <!-- TESTIMONIAL CAROUSEL (dengan data lengkap) -->
     <section>
       <div class="container">
-        <h2 class="section-title">Apa Kata <span>Mereka</span></h2>
+        <h2 class="section-title">Apa Kata <span>Ibu Lain?</span></h2>
         <div class="carousel-container" id="testiCarousel">
           <div class="carousel-track" id="testiTrack"></div>
           <button class="carousel-btn prev" id="testiPrev">❮</button>
@@ -810,13 +634,11 @@
     <section>
       <div class="container">
         <div class="pricing-card">
-          <h2 style="font-size: 2rem">Paket Trial</h2>
-          <div class="price">Rp 39.000 <small>/10 butir</small></div>
-          <p style="margin-bottom: 30px; color: #b0c0d0">
-            Langkah kecil untuk nutrisi besar. Coba dulu, rasakan bedanya.
-          </p>
+          <h2 style="font-size: 2rem">Paket Trial 10 Butir</h2>
+          <div class="price">Rp 39.000</div>
+          <p style="margin-bottom: 30px">Langkah kecil untuk nutrisi besar.</p>
           <a
-            href="https://wa.me/628119950205?text=Saya%20mau%20Trial%2010%20Butir%20Telur%20Cerdas"
+            href="https://wa.me/628119950205?text=Saya%20mau%20pesan%20Trial%2010%20Butir%20Telur%20Cerdas"
             class="btn btn-gold"
             style="width: 100%"
             ><i class="fab fa-whatsapp"></i> Pesan Sekarang</a
@@ -825,34 +647,28 @@
       </div>
     </section>
 
-    <!-- CTA FINAL -->
-    <section style="background: #0f172a; text-align: center">
+    <!-- FINAL CTA -->
+    <section class="cta-final">
       <div class="container">
         <h2 style="font-size: 2.2rem">Mulai dari 10 Butir Dulu.</h2>
-        <p style="font-size: 1.2rem; color: #b0c0d0; margin: 15px 0 30px">
-          Jangan tunggu sampai terlambat. Investasi kecil untuk masa depan
-          cerdas.
+        <p style="font-size: 1.2rem; margin: 15px 0 30px">
+          Jangan tunggu sampai terlambat.
         </p>
         <a
           href="https://wa.me/628119950205?text=Saya%20siap%20order%20Telur%20Cerdas"
-          class="btn btn-gold btn-large"
-          ><i class="fab fa-whatsapp"></i> Order via 0811-9950-205</a
+          class="btn btn-gold"
+          ><i class="fab fa-whatsapp"></i> Order via WhatsApp 08119950205</a
         >
       </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
-      <p>© 2026 Telur Cerdas by Diamant Origo Inc. All Rights Reserved.</p>
-      <p style="margin-top: 12px; font-size: 0.9rem">
-        <i class="fab fa-instagram"></i> <i class="fab fa-facebook"></i>
-        <i class="fab fa-tiktok"></i> · #TelurCerdas #Omega3Herbal
-      </p>
+      © 2026 Telur Cerdas by Diamant Origo Inc. All Rights Reserved.
     </footer>
 
     <script>
       (function () {
-        // ========== DATA GAMBAR PRODUK ==========
+        // Daftar gambar produk (dari URL)
         const productImages = [
           'https://dongkrakusaha.com/gambarbebas/1526720260223-120141_yolk telur cerdas.JPG',
           'https://dongkrakusaha.com/gambarbebas/1526720260223-120141_yolk telur biasa.JPG',
@@ -864,61 +680,49 @@
           'https://dongkrakusaha.com/gambarbebas/1526720260223-120911_dus package.JPG',
         ];
 
-        // ========== DATA TESTIMONIAL ==========
+        // Data testimonial (lengkap)
         const testimonials = [
           {
-            id: 1,
             name: 'drh. Lina Maryana',
             role: 'Dokter Hewan - Marketing Manager',
             message:
               'Anak saya sangat suka Telur Cerdas krn tidak amis dan tidak alergi. Rasanya jg segar dan gurih. Skrg setiap sarapan pasti Telur Cerdas!',
-            image: '',
             rating: 5,
           },
           {
-            id: 2,
             name: 'Priskila',
             role: 'Owner Healthy Cafe',
             message:
               'Kualitas Telur Cerdas luar biasa! Kuningnya cerah, dan teksturnya padat. Cocok untuk semua menu sehat di cafe saya.',
-            image: '',
             rating: 5,
           },
           {
-            id: 3,
             name: 'Natassya Paramita',
             role: 'Office Manager',
             message:
               'Anak-anak jadi lebih aktif, ceria, dan cepat belajar. Terima kasih Telur Cerdas, produk lokal dengan kualitas premium!',
-            image: '',
             rating: 4,
           },
           {
-            id: 4,
             name: 'dr. Fernando Sp.A',
             role: 'Dokter Anak',
             message:
               'Saya tidak pernah absen stok Telur Cerdas di rumah. Anak-anak suka, dan saya tenang dengan kandungan nutrisinya.',
-            image: '',
             rating: 5,
           },
         ];
 
-        // ========== FUNGSI CAROUSEL GENERIC ==========
+        // Fungsi inisialisasi carousel
         function initCarousel(trackId, items, isProduct) {
           const track = document.getElementById(trackId);
           if (!track) return;
-
-          // Bersihkan track
           track.innerHTML = '';
 
-          // Buat slide
           items.forEach((item, index) => {
-            const slideDiv = document.createElement('div');
-            slideDiv.className = 'carousel-item';
+            const slide = document.createElement('div');
+            slide.className = 'carousel-item';
 
             if (isProduct) {
-              // Slide gambar produk
               const img = document.createElement('img');
               img.src = item;
               img.alt = `Telur Cerdas ${index + 1}`;
@@ -926,9 +730,8 @@
                 this.src =
                   'https://via.placeholder.com/600x400?text=Telur+Cerdas';
               };
-              slideDiv.appendChild(img);
+              slide.appendChild(img);
             } else {
-              // Slide testimonial
               const t = item;
               const card = document.createElement('div');
               card.className = 'testimonial-card';
@@ -938,13 +741,10 @@
               profileDiv.className = 'testi-profile';
               const avatarDiv = document.createElement('div');
               avatarDiv.className = 'testi-avatar';
-              // Fallback avatar (inisial)
-              avatarDiv.innerHTML = `<span>${t.name.charAt(0)}</span>`;
-              // jika ada image bisa ditambahkan <img> tapi kita pakai inisial saja karena tidak ada file
+              avatarDiv.textContent = t.name.charAt(0);
               const nameDiv = document.createElement('div');
               nameDiv.className = 'testi-name';
               nameDiv.innerHTML = `<h4>${t.name}</h4><p>${t.role}</p>`;
-
               profileDiv.appendChild(avatarDiv);
               profileDiv.appendChild(nameDiv);
 
@@ -965,13 +765,12 @@
               card.appendChild(profileDiv);
               card.appendChild(ratingDiv);
               card.appendChild(msgDiv);
-              slideDiv.appendChild(card);
+              slide.appendChild(card);
             }
 
-            track.appendChild(slideDiv);
+            track.appendChild(slide);
           });
 
-          // setup carousel
           const container = track.closest('.carousel-container');
           if (!container) return;
 
@@ -981,19 +780,19 @@
             container.parentElement.querySelector('.carousel-dots');
 
           let currentIndex = 0;
-          const slides = Array.from(track.children);
+          const slides = track.children;
           const slideCount = slides.length;
 
           function updateDots() {
             if (!dotsContainer) return;
             dotsContainer.innerHTML = '';
-            slides.forEach((_, i) => {
+            for (let i = 0; i < slideCount; i++) {
               const dot = document.createElement('span');
               dot.classList.add('dot');
               if (i === currentIndex) dot.classList.add('active');
               dot.addEventListener('click', () => moveToSlide(i));
               dotsContainer.appendChild(dot);
-            });
+            }
           }
 
           function moveToSlide(index) {
@@ -1013,16 +812,16 @@
               moveToSlide(currentIndex + 1),
             );
 
-          // inisialisasi
           moveToSlide(0);
         }
 
-        // Inisialisasi kedua carousel setelah DOM siap
         window.addEventListener('DOMContentLoaded', function () {
           initCarousel('productTrack', productImages, true);
           initCarousel('testiTrack', testimonials, false);
         });
       })();
     </script>
+
+    <!-- fallback gambar hero jika file tidak ada -->
   </body>
 </html>
