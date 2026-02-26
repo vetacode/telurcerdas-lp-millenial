@@ -46,7 +46,7 @@
       .container {
         max-width: 1280px;
         margin: 0 auto;
-        padding: 0 5%;
+        padding: 0 20px;
       }
 
       section {
@@ -104,7 +104,7 @@
       /* navbar */
       nav {
         background: var(--navy);
-        padding: 16px 5%;
+        padding: 16px 20px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -112,47 +112,31 @@
         top: 0;
         z-index: 1000;
         border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        flex-wrap: wrap;
       }
 
       .logo-area {
         display: flex;
         align-items: center;
         gap: 15px;
+        flex-wrap: wrap;
       }
 
-      .logo-diamant {
-        font-weight: 800;
-        font-size: 1.5rem;
-        background: linear-gradient(135deg, #fff 30%, var(--gold) 80%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        border-right: 2px solid var(--gold);
-        padding-right: 15px;
+      .logo-diamant img {
+        height: 40px;
+        width: auto;
       }
 
-      .logo-telurcerdas {
-        display: flex;
-        flex-direction: column;
-        line-height: 1.2;
-      }
-
-      .logo-telurcerdas .brand {
-        font-size: 1.2rem;
-        font-weight: 800;
-        color: var(--gold);
-        text-transform: uppercase;
-      }
-
-      .logo-telurcerdas .tagline {
-        font-size: 0.7rem;
-        color: #aaa;
-        letter-spacing: 1px;
+      .logo-telurcerdas img {
+        height: 45px;
+        width: auto;
       }
 
       .nav-menu {
         display: flex;
         gap: 28px;
         align-items: center;
+        flex-wrap: wrap;
       }
 
       .nav-menu a {
@@ -232,6 +216,7 @@
         max-width: 100%;
         width: 400px;
         animation: float 6s ease-in-out infinite;
+        border-radius: 20px;
       }
 
       @keyframes float {
@@ -246,7 +231,37 @@
         }
       }
 
-      /* grid cards */
+      /* statistik */
+      .stats-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px 50px;
+        background: rgba(26, 35, 50, 0.8);
+        backdrop-filter: blur(4px);
+        padding: 30px 40px;
+        border-radius: 60px;
+        margin: 40px 0;
+        border: 1px solid rgba(212, 175, 55, 0.2);
+      }
+
+      .stat-item {
+        text-align: center;
+      }
+
+      .stat-number {
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: var(--gold);
+        line-height: 1;
+      }
+
+      .stat-label {
+        font-size: 0.9rem;
+        color: #b0b7c5;
+      }
+
+      /* grid cards untuk problem/solusi */
       .card-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -258,14 +273,15 @@
         padding: 30px 20px;
         border-radius: 16px;
         border-left: 4px solid var(--gold);
-        transition: 0.3s;
+        transition: all 0.3s ease;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
         text-align: center;
       }
 
       .card:hover {
-        transform: translateY(-5px);
+        transform: translateY(-5px) scale(1.02);
         border-left-width: 8px;
+        box-shadow: 0 20px 30px rgba(212, 175, 55, 0.2);
       }
 
       .card i {
@@ -278,14 +294,14 @@
         font-weight: 500;
       }
 
-      /* testimonial carousel */
+      /* carousel produk */
       .carousel-section {
         background: #0f1a2b;
       }
 
       .carousel-container {
         position: relative;
-        max-width: 1000px;
+        max-width: 500px;
         margin: 0 auto;
         overflow: hidden;
         border-radius: 30px;
@@ -294,7 +310,7 @@
 
       .carousel-track {
         display: flex;
-        transition: transform 0.4s ease;
+        transition: transform 0.5s ease;
       }
 
       .carousel-item {
@@ -303,12 +319,23 @@
         padding: 15px;
       }
 
+      .carousel-item .image-wrapper {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        border-radius: 20px;
+        overflow: hidden;
+        border: 2px solid var(--gold);
+      }
+
       .carousel-item img {
         width: 100%;
-        height: 300px;
+        height: 100%;
         object-fit: cover;
-        border-radius: 20px;
-        border: 1px solid var(--gold);
+        transition: transform 0.4s ease;
+      }
+
+      .carousel-item img:hover {
+        transform: scale(1.05);
       }
 
       .carousel-btn {
@@ -333,6 +360,7 @@
       .carousel-btn:hover {
         background: var(--gold);
         color: #000;
+        transform: translateY(-50%) scale(1.1);
       }
 
       .prev {
@@ -363,12 +391,26 @@
         width: 30px;
       }
 
-      /* testimonial card */
+      /* testimonial grid (3 kolom desktop, 1 kolom mobile) */
+      .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+      }
+
       .testimonial-card {
         background: #1f2a3c;
         border-radius: 30px;
-        padding: 35px 30px;
+        padding: 30px 25px;
         border: 1px solid #3e4b60;
+        transition: 0.3s;
+        animation: fadeInUp 0.6s ease;
+      }
+
+      .testimonial-card:hover {
+        transform: translateY(-8px);
+        border-color: var(--gold);
+        box-shadow: 0 20px 30px rgba(212, 175, 55, 0.15);
       }
 
       .testi-profile {
@@ -389,6 +431,7 @@
         font-size: 1.8rem;
         color: var(--gold);
         border: 2px solid var(--gold);
+        font-weight: 700;
       }
 
       .testi-name h4 {
@@ -409,13 +452,24 @@
       .testi-message {
         font-style: italic;
         color: #d0daea;
-        font-size: 1.1rem;
+        font-size: 1rem;
       }
 
       .testi-message i {
         color: var(--gold);
         opacity: 0.5;
         margin-right: 5px;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
 
       /* pricing */
@@ -427,6 +481,12 @@
         border-radius: 30px;
         border: 1px solid var(--gold);
         text-align: center;
+        transition: 0.3s;
+      }
+
+      .pricing-card:hover {
+        transform: scale(1.02);
+        box-shadow: 0 30px 40px rgba(212, 175, 55, 0.2);
       }
 
       .price {
@@ -434,6 +494,12 @@
         font-weight: 800;
         color: var(--gold);
         margin: 15px 0 10px;
+      }
+
+      .price-coret {
+        color: grey;
+        text-decoration: line-through;
+        font-size: 30px;
       }
 
       .price small {
@@ -451,35 +517,47 @@
       footer {
         background: #000;
         text-align: center;
-        padding: 30px 5%;
+        padding: 30px 20px;
         color: #aaa;
       }
 
       /* responsive */
+      @media (max-width: 1024px) {
+        .testimonial-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
       @media (max-width: 768px) {
         .hero-text h1 {
           font-size: 2.5rem;
         }
         .nav-menu {
-          flex-wrap: wrap;
           justify-content: center;
-          gap: 15px;
-        }
-        .carousel-item img {
-          height: 220px;
+          width: 100%;
+          margin-top: 10px;
         }
         .carousel-btn {
           width: 36px;
           height: 36px;
           font-size: 1.5rem;
         }
+        .testimonial-grid {
+          grid-template-columns: 1fr;
+        }
       }
+
       @media (max-width: 480px) {
         .hero-text h1 {
           font-size: 2rem;
         }
         .section-title {
           font-size: 1.8rem;
+        }
+        .stats-grid {
+          flex-direction: column;
+          gap: 15px;
+          align-items: center;
         }
       }
     </style>
@@ -488,10 +566,12 @@
     <!-- NAVBAR -->
     <nav>
       <div class="logo-area">
-        <div class="logo-diamant">Diamant</div>
         <div class="logo-telurcerdas">
-          <span class="brand">TEIUR CERDAS</span>
-          <span class="tagline">Otak Kuat Anak Hebat</span>
+          <img
+            src="https://dongkrakusaha.com/gambarbebas/1526720260226-031715_maskot.webp"
+            alt="Telur Cerdas"
+            onerror="this.src = 'https://via.placeholder.com/45x45?text=TC'"
+          />
         </div>
       </div>
       <div class="nav-menu">
@@ -540,15 +620,34 @@
             </div>
           </div>
           <div class="hero-image">
-            <!-- Gambar hero dari file Omega3 herbal front.png -->
+            <!-- Gambar hero dari URL yang diberikan (encode spasi) -->
             <img
-              src="Omega3 herbal front.png"
-              alt="Omega3 Herbal Eggs"
+              src="https://dongkrakusaha.com/gambarbebas/1526720260226-034053_Omega3 herbal front.png"
               onerror="
                 this.src =
-                  'https://via.placeholder.com/400x400?text=Omega3+Herbal+Eggs'
+                  'https://via.placeholder.com/400x400?text=Omega3+Herbal'
               "
             />
+          </div>
+        </div>
+
+        <!-- STATISTIK -->
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-number">21+</span>
+            <span class="stat-label">Vendor</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">10+</span>
+            <span class="stat-label">Varian Telur</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">Depok</span>
+            <span class="stat-label">Area Vendor</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">Jabodetabek</span>
+            <span class="stat-label">Distribusi</span>
           </div>
         </div>
       </div>
@@ -604,7 +703,7 @@
       </div>
     </section>
 
-    <!-- CAROUSEL GALLERY PRODUK (gambar dari URL yang diberikan) -->
+    <!-- CAROUSEL PRODUK (gambar 1:1) -->
     <section class="carousel-section">
       <div class="container">
         <h2 class="section-title">Gallery <span>Telur Cerdas</span></h2>
@@ -617,16 +716,11 @@
       </div>
     </section>
 
-    <!-- TESTIMONIAL CAROUSEL (dengan data lengkap) -->
+    <!-- TESTIMONIAL GRID (3 kolom) -->
     <section>
       <div class="container">
-        <h2 class="section-title">Apa Kata <span>Ibu Lain?</span></h2>
-        <div class="carousel-container" id="testiCarousel">
-          <div class="carousel-track" id="testiTrack"></div>
-          <button class="carousel-btn prev" id="testiPrev">❮</button>
-          <button class="carousel-btn next" id="testiNext">❯</button>
-        </div>
-        <div class="carousel-dots" id="testiDots"></div>
+        <h2 class="section-title">Apa Kata <span>Customer Kami?</span></h2>
+        <div class="testimonial-grid" id="testimonialGrid"></div>
       </div>
     </section>
 
@@ -636,6 +730,7 @@
         <div class="pricing-card">
           <h2 style="font-size: 2rem">Paket Trial 10 Butir</h2>
           <div class="price">Rp 39.000</div>
+          <div class="price-coret">Rp 50.000</div>
           <p style="margin-bottom: 30px">Langkah kecil untuk nutrisi besar.</p>
           <a
             href="https://wa.me/628119950205?text=Saya%20mau%20pesan%20Trial%2010%20Butir%20Telur%20Cerdas"
@@ -668,7 +763,7 @@
 
     <script>
       (function () {
-        // Daftar gambar produk (dari URL)
+        // Daftar gambar produk (8 gambar, pastikan URL valid)
         const productImages = [
           'https://dongkrakusaha.com/gambarbebas/1526720260223-120141_yolk telur cerdas.JPG',
           'https://dongkrakusaha.com/gambarbebas/1526720260223-120141_yolk telur biasa.JPG',
@@ -712,81 +807,28 @@
           },
         ];
 
-        // Fungsi inisialisasi carousel
-        function initCarousel(trackId, items, isProduct) {
-          const track = document.getElementById(trackId);
-          if (!track) return;
-          track.innerHTML = '';
-
-          items.forEach((item, index) => {
-            const slide = document.createElement('div');
-            slide.className = 'carousel-item';
-
-            if (isProduct) {
-              const img = document.createElement('img');
-              img.src = item;
-              img.alt = `Telur Cerdas ${index + 1}`;
-              img.onerror = function () {
-                this.src =
-                  'https://via.placeholder.com/600x400?text=Telur+Cerdas';
-              };
-              slide.appendChild(img);
-            } else {
-              const t = item;
-              const card = document.createElement('div');
-              card.className = 'testimonial-card';
-
-              // Profile
-              const profileDiv = document.createElement('div');
-              profileDiv.className = 'testi-profile';
-              const avatarDiv = document.createElement('div');
-              avatarDiv.className = 'testi-avatar';
-              avatarDiv.textContent = t.name.charAt(0);
-              const nameDiv = document.createElement('div');
-              nameDiv.className = 'testi-name';
-              nameDiv.innerHTML = `<h4>${t.name}</h4><p>${t.role}</p>`;
-              profileDiv.appendChild(avatarDiv);
-              profileDiv.appendChild(nameDiv);
-
-              // Rating
-              const ratingDiv = document.createElement('div');
-              ratingDiv.className = 'testi-rating';
-              for (let i = 0; i < 5; i++) {
-                const star = document.createElement('i');
-                star.className = i < t.rating ? 'fas fa-star' : 'far fa-star';
-                ratingDiv.appendChild(star);
-              }
-
-              // Message
-              const msgDiv = document.createElement('div');
-              msgDiv.className = 'testi-message';
-              msgDiv.innerHTML = `<i class="fas fa-quote-left"></i> ${t.message}`;
-
-              card.appendChild(profileDiv);
-              card.appendChild(ratingDiv);
-              card.appendChild(msgDiv);
-              slide.appendChild(card);
-            }
-
-            track.appendChild(slide);
+        // Render carousel produk
+        const productTrack = document.getElementById('productTrack');
+        if (productTrack) {
+          productImages.forEach((src) => {
+            const item = document.createElement('div');
+            item.className = 'carousel-item';
+            item.innerHTML = `<div class="image-wrapper"><img src="${src}" alt="Telur Cerdas" onerror="this.src='https://via.placeholder.com/400x400?text=Telur+Cerdas'"></div>`;
+            productTrack.appendChild(item);
           });
 
-          const container = track.closest('.carousel-container');
-          if (!container) return;
-
-          const prevBtn = container.querySelector('.prev');
-          const nextBtn = container.querySelector('.next');
-          const dotsContainer =
-            container.parentElement.querySelector('.carousel-dots');
-
+          // Carousel logic
+          const container = document.getElementById('productCarousel');
+          const prev = document.getElementById('prodPrev');
+          const next = document.getElementById('prodNext');
+          const dotsContainer = document.getElementById('productDots');
+          const slides = productTrack.children;
           let currentIndex = 0;
-          const slides = track.children;
-          const slideCount = slides.length;
 
           function updateDots() {
             if (!dotsContainer) return;
             dotsContainer.innerHTML = '';
-            for (let i = 0; i < slideCount; i++) {
+            for (let i = 0; i < slides.length; i++) {
               const dot = document.createElement('span');
               dot.classList.add('dot');
               if (i === currentIndex) dot.classList.add('active');
@@ -796,32 +838,61 @@
           }
 
           function moveToSlide(index) {
-            if (index < 0) index = slideCount - 1;
-            if (index >= slideCount) index = 0;
+            if (index < 0) index = slides.length - 1;
+            if (index >= slides.length) index = 0;
             currentIndex = index;
-            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            productTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
             updateDots();
           }
 
-          if (prevBtn)
-            prevBtn.addEventListener('click', () =>
-              moveToSlide(currentIndex - 1),
-            );
-          if (nextBtn)
-            nextBtn.addEventListener('click', () =>
-              moveToSlide(currentIndex + 1),
-            );
+          if (prev)
+            prev.addEventListener('click', () => moveToSlide(currentIndex - 1));
+          if (next)
+            next.addEventListener('click', () => moveToSlide(currentIndex + 1));
 
           moveToSlide(0);
         }
 
-        window.addEventListener('DOMContentLoaded', function () {
-          initCarousel('productTrack', productImages, true);
-          initCarousel('testiTrack', testimonials, false);
-        });
+        // Render testimonial grid
+        const testimonialGrid = document.getElementById('testimonialGrid');
+        if (testimonialGrid) {
+          testimonials.forEach((t) => {
+            const card = document.createElement('div');
+            card.className = 'testimonial-card';
+
+            // Profile
+            const profileDiv = document.createElement('div');
+            profileDiv.className = 'testi-profile';
+            const avatarDiv = document.createElement('div');
+            avatarDiv.className = 'testi-avatar';
+            avatarDiv.textContent = t.name.charAt(0);
+            const nameDiv = document.createElement('div');
+            nameDiv.className = 'testi-name';
+            nameDiv.innerHTML = `<h4>${t.name}</h4><p>${t.role}</p>`;
+            profileDiv.appendChild(avatarDiv);
+            profileDiv.appendChild(nameDiv);
+
+            // Rating
+            const ratingDiv = document.createElement('div');
+            ratingDiv.className = 'testi-rating';
+            for (let i = 0; i < 5; i++) {
+              const star = document.createElement('i');
+              star.className = i < t.rating ? 'fas fa-star' : 'far fa-star';
+              ratingDiv.appendChild(star);
+            }
+
+            // Message
+            const msgDiv = document.createElement('div');
+            msgDiv.className = 'testi-message';
+            msgDiv.innerHTML = `<i class="fas fa-quote-left"></i> ${t.message}`;
+
+            card.appendChild(profileDiv);
+            card.appendChild(ratingDiv);
+            card.appendChild(msgDiv);
+            testimonialGrid.appendChild(card);
+          });
+        }
       })();
     </script>
-
-    <!-- fallback gambar hero jika file tidak ada -->
   </body>
 </html>
