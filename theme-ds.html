@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"
     />
     <title>Telur Cerdas Anak | Omega 3 Herbal - Diamant</title>
     <!-- Font & Icons -->
@@ -30,6 +30,7 @@
         background-color: #0b1320;
         color: #ffffff;
         line-height: 1.5;
+        overflow-x: hidden;
       }
 
       :root {
@@ -44,20 +45,21 @@
 
       /* container */
       .container {
+        width: 100%;
         max-width: 1280px;
         margin: 0 auto;
         padding: 0 20px;
       }
 
       section {
-        padding: 70px 0;
+        padding: 60px 0;
       }
 
       .section-title {
-        font-size: 2.2rem;
+        font-size: 2rem;
         font-weight: 700;
         text-align: center;
-        margin-bottom: 3rem;
+        margin-bottom: 2.5rem;
       }
 
       .section-title span {
@@ -68,13 +70,14 @@
 
       .btn {
         display: inline-block;
-        padding: 14px 32px;
+        padding: 12px 28px;
         border-radius: 50px;
         font-weight: 600;
         text-decoration: none;
         transition: all 0.3s ease;
         border: 2px solid transparent;
         font-size: 1rem;
+        text-align: center;
       }
 
       .btn-gold {
@@ -104,7 +107,7 @@
       /* navbar */
       nav {
         background: var(--navy);
-        padding: 16px 20px;
+        padding: 12px 20px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -113,29 +116,25 @@
         z-index: 1000;
         border-bottom: 1px solid rgba(212, 175, 55, 0.2);
         flex-wrap: wrap;
+        gap: 10px;
       }
 
       .logo-area {
         display: flex;
         align-items: center;
-        gap: 15px;
-        flex-wrap: wrap;
-      }
-
-      .logo-diamant img {
-        height: 40px;
-        width: auto;
+        gap: 10px;
       }
 
       .logo-telurcerdas img {
         height: 45px;
         width: auto;
+        max-width: 100%;
       }
 
       .nav-menu {
         display: flex;
-        gap: 28px;
         align-items: center;
+        gap: 16px;
         flex-wrap: wrap;
       }
 
@@ -143,8 +142,9 @@
         color: #e0e0e0;
         text-decoration: none;
         font-weight: 500;
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         transition: color 0.2s;
+        white-space: nowrap;
       }
 
       .nav-menu a:hover {
@@ -153,10 +153,10 @@
 
       .nav-contact {
         background: rgba(212, 175, 55, 0.1);
-        padding: 8px 20px;
+        padding: 6px 16px;
         border-radius: 40px;
         border: 1px solid var(--gold);
-        font-weight: 600 !important;
+        font-weight: 600;
         color: var(--gold) !important;
       }
 
@@ -164,13 +164,13 @@
       .hero {
         display: flex;
         align-items: center;
-        gap: 50px;
+        gap: 40px;
         flex-wrap: wrap;
-        padding: 40px 0;
+        padding: 30px 0;
       }
 
       .hero-text {
-        flex: 1 1 400px;
+        flex: 1 1 350px;
       }
 
       .hero-text .badge {
@@ -186,7 +186,7 @@
       }
 
       .hero-text h1 {
-        font-size: 3rem;
+        font-size: 2.8rem;
         font-weight: 800;
         line-height: 1.2;
         margin-bottom: 20px;
@@ -199,24 +199,30 @@
       }
 
       .hero-text p {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         color: #b0b7c5;
-        margin-bottom: 35px;
+        margin-bottom: 30px;
         max-width: 500px;
       }
 
+      .hero-buttons {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
       .hero-image {
-        flex: 1 1 300px;
+        flex: 1 1 280px;
         display: flex;
         justify-content: center;
-        filter: drop-shadow(0 20px 30px rgba(212, 175, 55, 0.3));
       }
 
       .hero-image img {
         max-width: 100%;
-        width: 400px;
-        animation: float 6s ease-in-out infinite;
+        width: 380px;
         border-radius: 20px;
+        animation: float 6s ease-in-out infinite;
+        filter: drop-shadow(0 20px 30px rgba(212, 175, 55, 0.3));
       }
 
       @keyframes float {
@@ -224,7 +230,7 @@
           transform: translateY(0px);
         }
         50% {
-          transform: translateY(-15px);
+          transform: translateY(-12px);
         }
         100% {
           transform: translateY(0px);
@@ -236,10 +242,10 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 30px 50px;
+        gap: 25px 40px;
         background: rgba(26, 35, 50, 0.8);
         backdrop-filter: blur(4px);
-        padding: 30px 40px;
+        padding: 25px 30px;
         border-radius: 60px;
         margin: 40px 0;
         border: 1px solid rgba(212, 175, 55, 0.2);
@@ -247,30 +253,31 @@
 
       .stat-item {
         text-align: center;
+        min-width: 100px;
       }
 
       .stat-number {
-        font-size: 2.2rem;
+        font-size: 2rem;
         font-weight: 800;
         color: var(--gold);
-        line-height: 1;
+        line-height: 1.2;
       }
 
       .stat-label {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         color: #b0b7c5;
       }
 
       /* grid cards untuk problem/solusi */
       .card-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 25px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
       }
 
       .card {
         background: var(--navy);
-        padding: 30px 20px;
+        padding: 25px 15px;
         border-radius: 16px;
         border-left: 4px solid var(--gold);
         transition: all 0.3s ease;
@@ -285,13 +292,14 @@
       }
 
       .card i {
-        font-size: 2.2rem;
+        font-size: 2rem;
         color: var(--gold);
-        margin-bottom: 15px;
+        margin-bottom: 12px;
       }
 
       .card p {
         font-weight: 500;
+        font-size: 0.95rem;
       }
 
       /* carousel produk */
@@ -345,10 +353,10 @@
         background: rgba(0, 0, 0, 0.6);
         color: var(--gold);
         border: 2px solid var(--gold);
-        width: 44px;
-        height: 44px;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
-        font-size: 2rem;
+        font-size: 1.8rem;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -364,22 +372,22 @@
       }
 
       .prev {
-        left: 15px;
+        left: 10px;
       }
       .next {
-        right: 15px;
+        right: 10px;
       }
 
       .carousel-dots {
         display: flex;
         justify-content: center;
-        gap: 10px;
-        margin-top: 20px;
+        gap: 8px;
+        margin-top: 15px;
       }
 
       .dot {
-        width: 10px;
-        height: 10px;
+        width: 8px;
+        height: 8px;
         border-radius: 20px;
         background: #3a4556;
         cursor: pointer;
@@ -388,27 +396,27 @@
 
       .dot.active {
         background: var(--gold);
-        width: 30px;
+        width: 24px;
       }
 
-      /* testimonial grid (3 kolom desktop, 1 kolom mobile) */
+      /* testimonial grid (3 kolom desktop, 2 tablet, 1 mobile) */
       .testimonial-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 25px;
+        gap: 20px;
       }
 
       .testimonial-card {
         background: #1f2a3c;
-        border-radius: 30px;
-        padding: 30px 25px;
+        border-radius: 24px;
+        padding: 25px 20px;
         border: 1px solid #3e4b60;
         transition: 0.3s;
         animation: fadeInUp 0.6s ease;
       }
 
       .testimonial-card:hover {
-        transform: translateY(-8px);
+        transform: translateY(-6px);
         border-color: var(--gold);
         box-shadow: 0 20px 30px rgba(212, 175, 55, 0.15);
       }
@@ -416,55 +424,56 @@
       .testi-profile {
         display: flex;
         align-items: center;
-        gap: 15px;
-        margin-bottom: 20px;
+        gap: 12px;
+        margin-bottom: 15px;
       }
 
       .testi-avatar {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
         background: #2d384a;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         color: var(--gold);
         border: 2px solid var(--gold);
         font-weight: 700;
       }
 
       .testi-name h4 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         font-weight: 700;
       }
 
       .testi-name p {
-        font-size: 0.85rem;
+        font-size: 0.75rem;
         color: #a0b0c0;
       }
 
       .testi-rating {
         color: var(--gold);
-        margin-bottom: 15px;
+        margin-bottom: 12px;
+        font-size: 0.9rem;
       }
 
       .testi-message {
         font-style: italic;
         color: #d0daea;
-        font-size: 1rem;
+        font-size: 0.95rem;
       }
 
       .testi-message i {
         color: var(--gold);
         opacity: 0.5;
-        margin-right: 5px;
+        margin-right: 4px;
       }
 
       @keyframes fadeInUp {
         from {
           opacity: 0;
-          transform: translateY(20px);
+          transform: translateY(15px);
         }
         to {
           opacity: 1;
@@ -477,7 +486,7 @@
         background: var(--navy);
         max-width: 480px;
         margin: 0 auto;
-        padding: 45px 35px;
+        padding: 40px 30px;
         border-radius: 30px;
         border: 1px solid var(--gold);
         text-align: center;
@@ -490,20 +499,22 @@
       }
 
       .price {
-        font-size: 3.8rem;
+        font-size: 3.5rem;
         font-weight: 800;
         color: var(--gold);
-        margin: 15px 0 10px;
+        margin: 10px 0 5px;
+        line-height: 1.2;
       }
 
       .price-coret {
-        color: grey;
+        color: #aaa;
         text-decoration: line-through;
-        font-size: 30px;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
       }
 
       .price small {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         color: #aaa;
       }
 
@@ -517,11 +528,12 @@
       footer {
         background: #000;
         text-align: center;
-        padding: 30px 20px;
+        padding: 25px 20px;
         color: #aaa;
+        font-size: 0.9rem;
       }
 
-      /* responsive */
+      /* responsive breakpoints */
       @media (max-width: 1024px) {
         .testimonial-grid {
           grid-template-columns: repeat(2, 1fr);
@@ -529,19 +541,39 @@
       }
 
       @media (max-width: 768px) {
+        section {
+          padding: 50px 0;
+        }
         .hero-text h1 {
-          font-size: 2.5rem;
+          font-size: 2.2rem;
+        }
+        .hero-buttons {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .hero-buttons .btn {
+          width: 100%;
+          margin: 0 !important;
         }
         .nav-menu {
           justify-content: center;
           width: 100%;
-          margin-top: 10px;
         }
         .carousel-btn {
           width: 36px;
           height: 36px;
           font-size: 1.5rem;
         }
+        .stats-grid {
+          padding: 20px;
+          gap: 15px;
+        }
+        .stat-number {
+          font-size: 1.8rem;
+        }
+      }
+
+      @media (max-width: 640px) {
         .testimonial-grid {
           grid-template-columns: 1fr;
         }
@@ -549,16 +581,33 @@
 
       @media (max-width: 480px) {
         .hero-text h1 {
-          font-size: 2rem;
+          font-size: 1.9rem;
         }
         .section-title {
-          font-size: 1.8rem;
+          font-size: 1.6rem;
         }
         .stats-grid {
           flex-direction: column;
-          gap: 15px;
+          gap: 12px;
           align-items: center;
         }
+        .card-grid {
+          grid-template-columns: 1fr;
+        }
+        .pricing-card {
+          padding: 30px 20px;
+        }
+        .price {
+          font-size: 3rem;
+        }
+      }
+
+      /* utilitas */
+      .text-gold {
+        color: var(--gold);
+      }
+      .mt-2 {
+        margin-top: 0.5rem;
       }
     </style>
   </head>
@@ -590,7 +639,7 @@
     </nav>
 
     <!-- HERO -->
-    <section style="padding-top: 30px">
+    <section style="padding-top: 20px">
       <div class="container">
         <div class="hero">
           <div class="hero-text">
@@ -605,7 +654,7 @@
               Omega 3 herbal dalam telur harian — praktis, tanpa drama makan
               ikan. Solusi nutrisi cerdas untuk ibu modern.
             </p>
-            <div>
+            <div class="hero-buttons">
               <a
                 href="https://wa.me/628119950205?text=Saya%20mau%20Trial%2010%20Butir%20Telur%20Cerdas"
                 class="btn btn-gold"
@@ -614,15 +663,14 @@
               <a
                 href="https://wa.me/628119950205?text=Halo%20saya%20ingin%20konsultasi%20Telur%20Cerdas"
                 class="btn btn-outline"
-                style="margin-left: 10px"
                 >Konsultasi via WA</a
               >
             </div>
           </div>
           <div class="hero-image">
-            <!-- Gambar hero dari URL yang diberikan (encode spasi) -->
             <img
               src="https://dongkrakusaha.com/gambarbebas/1526720260226-034053_Omega3 herbal front.png"
+              alt="Omega3 Herbal"
               onerror="
                 this.src =
                   'https://via.placeholder.com/400x400?text=Omega3+Herbal'
@@ -703,7 +751,7 @@
       </div>
     </section>
 
-    <!-- CAROUSEL PRODUK (gambar 1:1) -->
+    <!-- CAROUSEL PRODUK -->
     <section class="carousel-section">
       <div class="container">
         <h2 class="section-title">Gallery <span>Telur Cerdas</span></h2>
@@ -716,7 +764,7 @@
       </div>
     </section>
 
-    <!-- TESTIMONIAL GRID (3 kolom) -->
+    <!-- TESTIMONIAL GRID -->
     <section>
       <div class="container">
         <h2 class="section-title">Apa Kata <span>Customer Kami?</span></h2>
@@ -763,7 +811,7 @@
 
     <script>
       (function () {
-        // Daftar gambar produk (8 gambar, pastikan URL valid)
+        // Daftar gambar produk (8 gambar)
         const productImages = [
           'https://dongkrakusaha.com/gambarbebas/1526720260223-120141_yolk telur cerdas.JPG',
           'https://dongkrakusaha.com/gambarbebas/1526720260223-120141_yolk telur biasa.JPG',
@@ -775,7 +823,7 @@
           'https://dongkrakusaha.com/gambarbebas/1526720260223-120911_dus package.JPG',
         ];
 
-        // Data testimonial (lengkap)
+        // Data testimonial
         const testimonials = [
           {
             name: 'drh. Lina Maryana',
@@ -817,8 +865,6 @@
             productTrack.appendChild(item);
           });
 
-          // Carousel logic
-          const container = document.getElementById('productCarousel');
           const prev = document.getElementById('prodPrev');
           const next = document.getElementById('prodNext');
           const dotsContainer = document.getElementById('productDots');
@@ -860,7 +906,6 @@
             const card = document.createElement('div');
             card.className = 'testimonial-card';
 
-            // Profile
             const profileDiv = document.createElement('div');
             profileDiv.className = 'testi-profile';
             const avatarDiv = document.createElement('div');
@@ -872,7 +917,6 @@
             profileDiv.appendChild(avatarDiv);
             profileDiv.appendChild(nameDiv);
 
-            // Rating
             const ratingDiv = document.createElement('div');
             ratingDiv.className = 'testi-rating';
             for (let i = 0; i < 5; i++) {
@@ -881,7 +925,6 @@
               ratingDiv.appendChild(star);
             }
 
-            // Message
             const msgDiv = document.createElement('div');
             msgDiv.className = 'testi-message';
             msgDiv.innerHTML = `<i class="fas fa-quote-left"></i> ${t.message}`;
