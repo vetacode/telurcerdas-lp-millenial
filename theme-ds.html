@@ -109,15 +109,20 @@
       nav {
         background: var(--navy);
         padding: 12px 20px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
         position: sticky;
         top: 0;
         z-index: 1000;
         border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-        flex-wrap: wrap;
-        gap: 10px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .nav-wrap {
+        width: 100%;
+        max-width: 1280px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
       }
 
       .logo-area {
@@ -241,7 +246,7 @@
       .hero {
         display: flex;
         align-items: center;
-        gap: 40px;
+        gap: 125px;
         flex-wrap: wrap;
         padding: 30px 0;
       }
@@ -289,7 +294,7 @@
       }
 
       .hero-image {
-        flex: 1 1 280px;
+        flex: 1 1 0px;
         display: flex;
         justify-content: center;
       }
@@ -715,53 +720,55 @@
   <body>
     <!-- NAVBAR -->
     <nav>
-      <div class="logo-area">
-        <div class="logo-diamant">
-          <!-- Logo Diamant (dengan fallback) -->
-          <img
-            src="/images/logo-diamant-only.svg"
-            alt="Diamant"
-            onerror="
-              this.style.display = 'none';
-              this.nextElementSibling.style.display = 'inline-block';
-            "
-          />
-          <span
-            style="
-              display: none;
-              font-size: 1.5rem;
-              font-weight: 800;
-              color: var(--gold);
-            "
-            >Diamant</span
-          >
-          <span style="font-weight: 700; color: #fff; margin-left: 5px"
-            >Origo Inc.</span
+      <div class="nav-wrap">
+        <div class="logo-area">
+          <div class="logo-diamant">
+            <!-- Logo Diamant (dengan fallback) -->
+            <img
+              src="/images/logo-diamant-only.svg"
+              alt="Diamant"
+              onerror="
+                this.style.display = 'none';
+                this.nextElementSibling.style.display = 'inline-block';
+              "
+            />
+            <span
+              style="
+                display: none;
+                font-size: 1.5rem;
+                font-weight: 800;
+                color: var(--gold);
+              "
+              >Diamant</span
+            >
+            <span style="font-weight: 700; color: #fff; margin-left: 5px"
+              >Origo Inc.</span
+            >
+          </div>
+        </div>
+
+        <!-- Hamburger icon -->
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <!-- Menu navigasi -->
+        <div class="nav-menu" id="navMenu">
+          <a href="#tentang">Tentang</a>
+          <a href="#layanan">Layanan</a>
+          <a href="#visi">Visi</a>
+          <a href="#nilai">Nilai</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#testimonial">Testimonial</a>
+          <a href="#kontak">Kontak</a>
+          <a
+            href="https://wa.me/628119950205?text=Halo%20saya%20ingin%20konsultasi%20Telur%20Cerdas"
+            class="nav-contact"
+            ><i class="fab fa-whatsapp"></i> Hubungi</a
           >
         </div>
-      </div>
-
-      <!-- Hamburger icon -->
-      <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      <!-- Menu navigasi -->
-      <div class="nav-menu" id="navMenu">
-        <a href="#tentang">Tentang</a>
-        <a href="#layanan">Layanan</a>
-        <a href="#visi">Visi</a>
-        <a href="#nilai">Nilai</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#testimonial">Testimonial</a>
-        <a href="#kontak">Kontak</a>
-        <a
-          href="https://wa.me/628119950205?text=Halo%20saya%20ingin%20konsultasi%20Telur%20Cerdas"
-          class="nav-contact"
-          ><i class="fab fa-whatsapp"></i> Hubungi</a
-        >
       </div>
     </nav>
 
