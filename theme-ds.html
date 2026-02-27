@@ -771,27 +771,37 @@
       <div class="nav-wrap">
         <div class="logo-area">
           <div class="logo-diamant">
-            <!-- Logo Diamant (dengan fallback) -->
-            <img
-              src="/images/logo-diamant-only.svg"
-              alt="Diamant"
-              onerror="
-                this.style.display = 'none';
-                this.nextElementSibling.style.display = 'inline-block';
-              "
-            />
-            <span
+            <a
+              href="#hero"
               style="
-                display: none;
-                font-size: 1.5rem;
-                font-weight: 800;
-                color: var(--gold);
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                text-decoration: none;
+                color: inherit;
               "
-              >Diamant</span
             >
-            <span style="font-weight: 700; color: #fff; margin-left: 5px"
-              >Origo Inc.</span
-            >
+              <img
+                src="/images/logo-diamant-only.svg"
+                alt="Diamant"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'inline-block';
+                "
+              />
+              <span
+                style="
+                  display: none;
+                  font-size: 1.5rem;
+                  font-weight: 800;
+                  color: var(--gold);
+                "
+                >Diamant</span
+              >
+              <span style="font-weight: 700; color: #fff; margin-left: 5px"
+                >Origo Inc.</span
+              >
+            </a>
           </div>
         </div>
 
@@ -821,7 +831,7 @@
     </nav>
 
     <!-- HERO -->
-    <section style="padding-top: 20px">
+    <section id="hero" style="padding-top: 20px">
       <div class="container">
         <div class="hero">
           <div class="hero-text">
