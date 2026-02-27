@@ -36,6 +36,23 @@
         text-shadow: 0 0 30px rgba(212, 175, 55, 0.7);
       }
 
+      .hero-image {
+        filter: drop-shadow(0 20px 30px rgba(212, 175, 55, 0.3));
+        animation: float 6s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-12px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
       /* Enhanced Animations */
       @keyframes fadeInUp {
         from {
@@ -223,12 +240,12 @@
           <img
             src="https://dongkrakusaha.com/gambarbebas/1526720260227-082028_Omega3 Herbal HD.png"
             alt="Telur Cerdas Omega 3 Herbal"
-            class="w-full max-w-[380px] md:max-w-[460px] rounded-3xl shadow-2xl border border-[#d4af37]/20"
+            class="hero-image w-full max-w-[380px] md:max-w-[460px] rounded-3xl shadow-2xl border border-[#d4af37]/20"
           />
 
           <!-- Floating Telur Cerdas Logo -->
           <div
-            class="absolute -top-6 -right-6 bg-zinc-900 border-4 border-[#d4af37] rounded-full p-3 shadow-2xl"
+            class="absolute -top-6 right-14 bg-zinc-900 border-4 border-[#d4af37] rounded-full p-3 shadow-2xl"
           >
             <img
               src="https://dongkrakusaha.com/gambarbebas/1526720260226-031715_maskot.webp"
