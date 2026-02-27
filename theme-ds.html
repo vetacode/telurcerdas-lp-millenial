@@ -145,11 +145,30 @@
         letter-spacing: 0.5px;
       }
 
+      /* Hamburger menu */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 6px;
+        padding: 5px;
+      }
+
+      .hamburger span {
+        width: 30px;
+        height: 3px;
+        background: var(--gold);
+        transition: all 0.3s ease;
+        border-radius: 3px;
+      }
+
+      /* Navigasi menu */
       .nav-menu {
         display: flex;
         align-items: center;
         gap: 20px;
         flex-wrap: wrap;
+        transition: all 0.4s ease;
       }
 
       .nav-menu a {
@@ -172,6 +191,52 @@
         border: 1px solid var(--gold);
         font-weight: 600;
         color: var(--gold) !important;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hamburger {
+          display: flex;
+        }
+
+        .nav-menu {
+          position: fixed;
+          top: 70px; /* Tinggi navbar */
+          left: 0;
+          width: 100%;
+          background: var(--navy);
+          flex-direction: column;
+          align-items: center;
+          gap: 15px;
+          padding: 30px 20px;
+          transform: translateY(-150%);
+          transition: transform 0.4s ease-in-out;
+          z-index: 999;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+          border-top: 1px solid rgba(212, 175, 55, 0.2);
+          backdrop-filter: blur(10px);
+        }
+
+        .nav-menu.active {
+          transform: translateY(0);
+        }
+
+        .nav-menu a {
+          width: 100%;
+          text-align: center;
+          padding: 12px 0;
+          font-size: 1.1rem;
+          border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .nav-menu a:last-child {
+          border-bottom: none;
+        }
+
+        .nav-contact {
+          width: auto;
+          margin-top: 10px;
+        }
       }
 
       /* hero */
@@ -596,7 +661,7 @@
         font-style: italic;
       }
 
-      /* responsive */
+      /* responsive tambahan */
       @media (max-width: 1024px) {
         .testimonial-grid {
           grid-template-columns: repeat(2, 1fr);
@@ -620,14 +685,6 @@
         .hero-buttons .btn {
           width: 100%;
           margin: 0 !important;
-        }
-        .nav-menu {
-          justify-content: center;
-          width: 100%;
-          gap: 12px;
-        }
-        .nav-menu a {
-          font-size: 0.85rem;
         }
         .carousel-btn {
           width: 36px;
@@ -701,7 +758,16 @@
           >
         </div>
       </div>
-      <div class="nav-menu">
+
+      <!-- Hamburger icon -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- Menu navigasi -->
+      <div class="nav-menu" id="navMenu">
         <a href="#tentang">Tentang</a>
         <a href="#layanan">Layanan</a>
         <a href="#visi">Visi</a>
@@ -1104,6 +1170,32 @@
             card.appendChild(ratingDiv);
             card.appendChild(msgDiv);
             testimonialGrid.appendChild(card);
+          });
+        }
+
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        if (hamburger && navMenu) {
+          hamburger.addEventListener('click', function (e) {
+            e.stopPropagation();
+            navMenu.classList.toggle('active');
+          });
+
+          // Tutup menu jika klik di luar
+          document.addEventListener('click', function (e) {
+            if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+              navMenu.classList.remove('active');
+            }
+          });
+
+          // Tutup menu saat link diklik
+          const menuLinks = navMenu.querySelectorAll('a');
+          menuLinks.forEach((link) => {
+            link.addEventListener('click', function () {
+              navMenu.classList.remove('active');
+            });
           });
         }
       })();
