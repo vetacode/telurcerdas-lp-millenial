@@ -23,6 +23,7 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        scroll-behavior: smooth;
       }
 
       body {
@@ -52,14 +53,14 @@
       }
 
       section {
-        padding: 60px 0;
+        padding: 70px 0;
       }
 
       .section-title {
-        font-size: 2rem;
+        font-size: 2.2rem;
         font-weight: 700;
         text-align: center;
-        margin-bottom: 2.5rem;
+        margin-bottom: 3rem;
       }
 
       .section-title span {
@@ -125,16 +126,29 @@
         gap: 10px;
       }
 
-      .logo-telurcerdas img {
+      .logo-diamant {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .logo-diamant img {
         height: 45px;
         width: auto;
         max-width: 100%;
       }
 
+      .logo-diamant span {
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: var(--gold);
+        letter-spacing: 0.5px;
+      }
+
       .nav-menu {
         display: flex;
         align-items: center;
-        gap: 16px;
+        gap: 20px;
         flex-wrap: wrap;
       }
 
@@ -142,7 +156,7 @@
         color: #e0e0e0;
         text-decoration: none;
         font-weight: 500;
-        font-size: 0.9rem;
+        font-size: 0.95rem;
         transition: color 0.2s;
         white-space: nowrap;
       }
@@ -268,7 +282,7 @@
         color: #b0b7c5;
       }
 
-      /* grid cards untuk problem/solusi */
+      /* grid cards */
       .card-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -399,7 +413,7 @@
         width: 24px;
       }
 
-      /* testimonial grid (3 kolom desktop, 2 tablet, 1 mobile) */
+      /* testimonial grid */
       .testimonial-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -533,10 +547,62 @@
         font-size: 0.9rem;
       }
 
-      /* responsive breakpoints */
+      /* tentang section */
+      .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .about-text p {
+        color: #b0b7c5;
+        margin-bottom: 20px;
+      }
+
+      .about-list {
+        list-style: none;
+      }
+
+      .about-list li {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 15px;
+        color: #e0e0e0;
+      }
+
+      .about-list i {
+        color: var(--gold);
+        font-size: 1.2rem;
+      }
+
+      .about-card {
+        background: #1f2a3c;
+        padding: 30px;
+        border-radius: 24px;
+        border-left: 6px solid var(--gold);
+      }
+
+      .about-card i {
+        font-size: 2.5rem;
+        color: var(--gold);
+        opacity: 0.5;
+        margin-bottom: 15px;
+      }
+
+      .about-card p {
+        font-size: 1.2rem;
+        font-style: italic;
+      }
+
+      /* responsive */
       @media (max-width: 1024px) {
         .testimonial-grid {
           grid-template-columns: repeat(2, 1fr);
+        }
+        .about-content {
+          grid-template-columns: 1fr;
         }
       }
 
@@ -558,6 +624,10 @@
         .nav-menu {
           justify-content: center;
           width: 100%;
+          gap: 12px;
+        }
+        .nav-menu a {
+          font-size: 0.85rem;
         }
         .carousel-btn {
           width: 36px;
@@ -601,35 +671,44 @@
           font-size: 3rem;
         }
       }
-
-      /* utilitas */
-      .text-gold {
-        color: var(--gold);
-      }
-      .mt-2 {
-        margin-top: 0.5rem;
-      }
     </style>
   </head>
   <body>
     <!-- NAVBAR -->
     <nav>
       <div class="logo-area">
-        <div class="logo-telurcerdas">
+        <div class="logo-diamant">
+          <!-- Logo Diamant (dengan fallback) -->
           <img
-            src="https://dongkrakusaha.com/gambarbebas/1526720260226-031715_maskot.webp"
-            alt="Telur Cerdas"
-            onerror="this.src = 'https://via.placeholder.com/45x45?text=TC'"
+            src="https://dongkrakusaha.com/gambarbebas/1526720260226-034358_logo-diamant-only.png"
+            alt="Diamant"
+            onerror="
+              this.style.display = 'none';
+              this.nextElementSibling.style.display = 'inline-block';
+            "
           />
+          <span
+            style="
+              display: none;
+              font-size: 1.5rem;
+              font-weight: 800;
+              color: var(--gold);
+            "
+            >Diamant</span
+          >
+          <span style="font-weight: 700; color: #fff; margin-left: 5px"
+            >Origo Inc.</span
+          >
         </div>
       </div>
       <div class="nav-menu">
-        <a href="#">Tentang</a>
-        <a href="#">Layanan</a>
-        <a href="#">Visi</a>
-        <a href="#">Nilai</a>
-        <a href="#">Kontak</a>
-        <a href="#"><i class="fas fa-search"></i></a>
+        <a href="#tentang">Tentang</a>
+        <a href="#layanan">Layanan</a>
+        <a href="#visi">Visi</a>
+        <a href="#nilai">Nilai</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#testimonial">Testimonial</a>
+        <a href="#kontak">Kontak</a>
         <a
           href="https://wa.me/628119950205?text=Halo%20saya%20ingin%20konsultasi%20Telur%20Cerdas"
           class="nav-contact"
@@ -638,7 +717,7 @@
       </div>
     </nav>
 
-    <!-- HERO -->
+    <!-- HERO (tetap tanpa id) -->
     <section style="padding-top: 20px">
       <div class="container">
         <div class="hero">
@@ -701,58 +780,122 @@
       </div>
     </section>
 
-    <!-- PROBLEM -->
-    <section>
+    <!-- TENTANG -->
+    <section id="tentang">
       <div class="container">
-        <h2 class="section-title">Kenapa Banyak Ibu <span>Khawatir?</span></h2>
+        <h2 class="section-title">Tentang <span>Diamant Origo</span></h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              Kami bergerak di jasa pemasaran digital berbasis website dan
+              penyediaan produk pangan protein berkualitas. Telur Cerdas adalah
+              wujud nyata komitmen kami terhadap gizi anak bangsa.
+            </p>
+            <ul class="about-list">
+              <li>
+                <i class="fas fa-check-circle"></i> Meningkatkan visibilitas
+                online bisnis lokal
+              </li>
+              <li>
+                <i class="fas fa-chart-line"></i> Mendatangkan traffic yang
+                relevan & berkualitas
+              </li>
+              <li>
+                <i class="fas fa-egg"></i> Distribusi produk telur fungsional
+                berkualitas
+              </li>
+            </ul>
+          </div>
+          <div class="about-card">
+            <i class="fas fa-quote-right"></i>
+            <p>
+              "Mitra Pertumbuhan Bisnis Digital Anda — spesialis pemasaran
+              digital & telur berkualitas."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LAYANAN (bisa diisi dengan solusi atau layanan khusus) -->
+    <section id="layanan" style="background: #0f1a2b">
+      <div class="container">
+        <h2 class="section-title">Layanan <span>Kami</span></h2>
         <div class="card-grid">
           <div class="card">
-            <i class="fas fa-fish"></i>
-            <p>Anak susah makan ikan.</p>
+            <i class="fas fa-laptop"></i>
+            <p>Pemasaran Digital Website</p>
           </div>
           <div class="card">
-            <i class="fas fa-brain"></i>
-            <p>Takut kurang Omega 3 untuk perkembangan otak.</p>
+            <i class="fas fa-seedling"></i>
+            <p>Telur Omega3 Herbal</p>
           </div>
           <div class="card">
-            <i class="fas fa-clock"></i>
-            <p>Ingin solusi praktis tanpa ribet.</p>
+            <i class="fas fa-truck"></i>
+            <p>Distribusi Jabodetabek</p>
+          </div>
+          <div class="card">
+            <i class="fas fa-handshake"></i>
+            <p>Kemitraan Bisnis Lokal</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISI -->
+    <section id="visi">
+      <div class="container">
+        <h2 class="section-title">Visi <span>Kami</span></h2>
+        <div
+          style="
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            background: #1f2a3c;
+            padding: 40px;
+            border-radius: 30px;
+            border-left: 6px solid var(--gold);
+          "
+        >
+          <i
+            class="fas fa-eye"
+            style="font-size: 3rem; color: var(--gold); margin-bottom: 20px"
+          ></i>
+          <p style="font-size: 1.3rem; font-style: italic">
+            Menjadi mitra terpercaya dalam pertumbuhan bisnis digital dan
+            penyedia pangan berkualitas untuk generasi cerdas Indonesia.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- NILAI -->
+    <section id="nilai" style="background: #0f1a2b">
+      <div class="container">
+        <h2 class="section-title">Nilai <span>Perusahaan</span></h2>
+        <div class="card-grid">
+          <div class="card">
+            <i class="fas fa-heart"></i>
+            <p>Peduli Gizi Anak</p>
           </div>
           <div class="card">
             <i class="fas fa-leaf"></i>
-            <p>Ingin produk dengan kualitas lebih terkontrol.</p>
+            <p>Alami & Terkontrol</p>
+          </div>
+          <div class="card">
+            <i class="fas fa-hand-holding-heart"></i>
+            <p>Kemitraan Berkelanjutan</p>
+          </div>
+          <div class="card">
+            <i class="fas fa-star"></i>
+            <p>Kualitas Premium</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SOLUTION -->
-    <section style="background: #0f1a2b">
-      <div class="container">
-        <h2 class="section-title">Solusi: <span>Telur Cerdas Anak</span></h2>
-        <div class="card-grid">
-          <div class="card">
-            <i class="fas fa-seedling"></i>
-            <p>Ayam berpakan herbal terkontrol.</p>
-          </div>
-          <div class="card">
-            <i class="fas fa-droplet"></i>
-            <p>Mengandung Omega 3 alami.</p>
-          </div>
-          <div class="card">
-            <i class="fas fa-bread-slice"></i>
-            <p>Mudah dikonsumsi setiap hari.</p>
-          </div>
-          <div class="card">
-            <i class="fas fa-balance-scale"></i>
-            <p>Bagian dari pola makan seimbang.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CAROUSEL PRODUK -->
-    <section class="carousel-section">
+    <!-- GALLERY (Carousel Produk) -->
+    <section id="gallery" class="carousel-section">
       <div class="container">
         <h2 class="section-title">Gallery <span>Telur Cerdas</span></h2>
         <div class="carousel-container" id="productCarousel">
@@ -764,11 +907,39 @@
       </div>
     </section>
 
-    <!-- TESTIMONIAL GRID -->
-    <section>
+    <!-- TESTIMONIAL -->
+    <section id="testimonial">
       <div class="container">
         <h2 class="section-title">Apa Kata <span>Customer Kami?</span></h2>
         <div class="testimonial-grid" id="testimonialGrid"></div>
+      </div>
+    </section>
+
+    <!-- KONTAK -->
+    <section id="kontak">
+      <div class="container">
+        <h2 class="section-title">Hubungi <span>Kami</span></h2>
+        <div
+          style="
+            max-width: 600px;
+            margin: 0 auto;
+            background: #1f2a3c;
+            padding: 40px;
+            border-radius: 30px;
+            text-align: center;
+            border: 1px solid var(--gold);
+          "
+        >
+          <i
+            class="fab fa-whatsapp"
+            style="font-size: 4rem; color: var(--gold); margin-bottom: 20px"
+          ></i>
+          <p style="font-size: 1.3rem; margin-bottom: 20px">0811-9950-205</p>
+          <p style="margin-bottom: 30px">Senin - Jumat, 08.00 - 17.00</p>
+          <a href="https://wa.me/628119950205" class="btn btn-gold"
+            ><i class="fab fa-whatsapp"></i> Chat via WA</a
+          >
+        </div>
       </div>
     </section>
 
