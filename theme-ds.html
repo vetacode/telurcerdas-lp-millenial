@@ -162,7 +162,6 @@
         border-radius: 3px;
       }
 
-      /* Navigasi menu */
       .nav-menu {
         display: flex;
         align-items: center;
@@ -193,7 +192,6 @@
         color: var(--gold) !important;
       }
 
-      /* Responsive */
       @media (max-width: 768px) {
         .hamburger {
           display: flex;
@@ -201,7 +199,7 @@
 
         .nav-menu {
           position: fixed;
-          top: 70px; /* Tinggi navbar */
+          top: 70px;
           left: 0;
           width: 100%;
           background: var(--navy);
@@ -347,7 +345,7 @@
         color: #b0b7c5;
       }
 
-      /* grid cards */
+      /* grid cards (untuk problem/solusi/layanan/nilai) */
       .card-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -381,117 +379,39 @@
         font-size: 0.95rem;
       }
 
-      /* carousel produk */
+      /* carousel multi-item (gallery & testimonial) */
       .carousel-section {
         background: #0f1a2b;
       }
 
       .carousel-container {
         position: relative;
-        max-width: 500px;
+        max-width: 1200px;
         margin: 0 auto;
         overflow: hidden;
-        border-radius: 30px;
-        border: 2px solid rgba(212, 175, 55, 0.3);
+        padding: 0 10px;
       }
 
       .carousel-track {
         display: flex;
         transition: transform 0.5s ease;
-      }
-
-      .carousel-item {
-        min-width: 100%;
-        box-sizing: border-box;
-        padding: 15px;
-      }
-
-      .carousel-item .image-wrapper {
-        width: 100%;
-        aspect-ratio: 1 / 1;
-        border-radius: 20px;
-        overflow: hidden;
-        border: 2px solid var(--gold);
-      }
-
-      .carousel-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.4s ease;
-      }
-
-      .carousel-item img:hover {
-        transform: scale(1.05);
-      }
-
-      .carousel-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(0, 0, 0, 0.6);
-        color: var(--gold);
-        border: 2px solid var(--gold);
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        font-size: 1.8rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        z-index: 10;
-        transition: 0.2s;
-      }
-
-      .carousel-btn:hover {
-        background: var(--gold);
-        color: #000;
-        transform: translateY(-50%) scale(1.1);
-      }
-
-      .prev {
-        left: 10px;
-      }
-      .next {
-        right: 10px;
-      }
-
-      .carousel-dots {
-        display: flex;
-        justify-content: center;
-        gap: 8px;
-        margin-top: 15px;
-      }
-
-      .dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 20px;
-        background: #3a4556;
-        cursor: pointer;
-        transition: 0.2s;
-      }
-
-      .dot.active {
-        background: var(--gold);
-        width: 24px;
-      }
-
-      /* testimonial grid */
-      .testimonial-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
         gap: 20px;
       }
 
+      .carousel-item {
+        flex: 0 0 auto;
+        width: calc(33.333% - 13.333px); /* 3 items with gap 20px */
+        box-sizing: border-box;
+      }
+
+      /* testimonial card di dalam carousel */
       .testimonial-card {
         background: #1f2a3c;
         border-radius: 24px;
         padding: 25px 20px;
         border: 1px solid #3e4b60;
         transition: 0.3s;
-        animation: fadeInUp 0.6s ease;
+        height: 100%;
       }
 
       .testimonial-card:hover {
@@ -549,14 +469,69 @@
         margin-right: 4px;
       }
 
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(15px);
+      /* gallery card */
+      .gallery-card {
+        background: #1f2a3c;
+        border-radius: 20px;
+        overflow: hidden;
+        border: 2px solid var(--gold);
+        aspect-ratio: 1 / 1;
+      }
+
+      .gallery-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      .gallery-card img:hover {
+        transform: scale(1.05);
+      }
+
+      /* carousel navigation */
+      .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.6);
+        color: var(--gold);
+        border: 2px solid var(--gold);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10;
+        transition: 0.2s;
+      }
+
+      .carousel-btn:hover {
+        background: var(--gold);
+        color: #000;
+        transform: translateY(-50%) scale(1.1);
+      }
+
+      .carousel-btn.prev {
+        left: 0;
+      }
+      .carousel-btn.next {
+        right: 0;
+      }
+
+      /* responsive untuk carousel item */
+      @media (max-width: 1024px) {
+        .carousel-item {
+          width: calc(50% - 10px); /* 2 items with gap 20px */
         }
-        to {
-          opacity: 1;
-          transform: translateY(0);
+      }
+
+      @media (max-width: 640px) {
+        .carousel-item {
+          width: 100%; /* 1 item */
         }
       }
 
@@ -590,11 +565,6 @@
         text-decoration: line-through;
         font-size: 1.5rem;
         margin-bottom: 10px;
-      }
-
-      .price small {
-        font-size: 1.2rem;
-        color: #aaa;
       }
 
       /* final cta */
@@ -661,11 +631,8 @@
         font-style: italic;
       }
 
-      /* responsive tambahan */
+      /* responsive umum */
       @media (max-width: 1024px) {
-        .testimonial-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
         .about-content {
           grid-template-columns: 1fr;
         }
@@ -686,23 +653,12 @@
           width: 100%;
           margin: 0 !important;
         }
-        .carousel-btn {
-          width: 36px;
-          height: 36px;
-          font-size: 1.5rem;
-        }
         .stats-grid {
           padding: 20px;
           gap: 15px;
         }
         .stat-number {
           font-size: 1.8rem;
-        }
-      }
-
-      @media (max-width: 640px) {
-        .testimonial-grid {
-          grid-template-columns: 1fr;
         }
       }
 
@@ -783,7 +739,7 @@
       </div>
     </nav>
 
-    <!-- HERO (tetap tanpa id) -->
+    <!-- HERO -->
     <section style="padding-top: 20px">
       <div class="container">
         <div class="hero">
@@ -883,7 +839,7 @@
       </div>
     </section>
 
-    <!-- LAYANAN (bisa diisi dengan solusi atau layanan khusus) -->
+    <!-- LAYANAN -->
     <section id="layanan" style="background: #0f1a2b">
       <div class="container">
         <h2 class="section-title">Layanan <span>Kami</span></h2>
@@ -960,24 +916,27 @@
       </div>
     </section>
 
-    <!-- GALLERY (Carousel Produk) -->
+    <!-- GALLERY (Carousel Multi-item Infinite) -->
     <section id="gallery" class="carousel-section">
       <div class="container">
         <h2 class="section-title">Gallery <span>Telur Cerdas</span></h2>
-        <div class="carousel-container" id="productCarousel">
-          <div class="carousel-track" id="productTrack"></div>
-          <button class="carousel-btn prev" id="prodPrev">❮</button>
-          <button class="carousel-btn next" id="prodNext">❯</button>
+        <div class="carousel-container" id="galleryCarousel">
+          <div class="carousel-track" id="galleryTrack"></div>
+          <button class="carousel-btn prev" id="galleryPrev">❮</button>
+          <button class="carousel-btn next" id="galleryNext">❯</button>
         </div>
-        <div class="carousel-dots" id="productDots"></div>
       </div>
     </section>
 
-    <!-- TESTIMONIAL -->
+    <!-- TESTIMONIAL (Carousel Multi-item Infinite) -->
     <section id="testimonial">
       <div class="container">
         <h2 class="section-title">Apa Kata <span>Customer Kami?</span></h2>
-        <div class="testimonial-grid" id="testimonialGrid"></div>
+        <div class="carousel-container" id="testimonialCarousel">
+          <div class="carousel-track" id="testimonialTrack"></div>
+          <button class="carousel-btn prev" id="testimonialPrev">❮</button>
+          <button class="carousel-btn next" id="testimonialNext">❯</button>
+        </div>
       </div>
     </section>
 
@@ -1048,7 +1007,7 @@
 
     <script>
       (function () {
-        // Daftar gambar produk (8 gambar)
+        // Data gambar produk
         const productImages = [
           'https://dongkrakusaha.com/gambarbebas/1526720260223-120141_yolk telur cerdas.JPG',
           'https://dongkrakusaha.com/gambarbebas/1526720260223-120141_yolk telur biasa.JPG',
@@ -1092,86 +1051,205 @@
           },
         ];
 
-        // Render carousel produk
-        const productTrack = document.getElementById('productTrack');
-        if (productTrack) {
-          productImages.forEach((src) => {
-            const item = document.createElement('div');
-            item.className = 'carousel-item';
-            item.innerHTML = `<div class="image-wrapper"><img src="${src}" alt="Telur Cerdas" onerror="this.src='https://via.placeholder.com/400x400?text=Telur+Cerdas'"></div>`;
-            productTrack.appendChild(item);
+        // Fungsi untuk mendapatkan jumlah item terlihat berdasarkan lebar layar
+        function getVisibleCount() {
+          if (window.innerWidth <= 640) return 1;
+          if (window.innerWidth <= 1024) return 2;
+          return 3;
+        }
+
+        // Inisialisasi carousel infinite loop
+        function initInfiniteCarousel(
+          trackId,
+          prevId,
+          nextId,
+          items,
+          isProduct,
+        ) {
+          const track = document.getElementById(trackId);
+          if (!track) return;
+
+          // Buat elemen slide asli
+          const originalSlides = [];
+          items.forEach((item, index) => {
+            const slide = document.createElement('div');
+            slide.className = 'carousel-item';
+            if (isProduct) {
+              slide.innerHTML = `
+              <div class="gallery-card">
+                <img src="${item}" alt="Telur Cerdas ${index + 1}" onerror="this.src='https://via.placeholder.com/400x400?text=Telur+Cerdas'">
+              </div>
+            `;
+            } else {
+              const t = item;
+              const ratingStars = [];
+              for (let i = 0; i < 5; i++) {
+                ratingStars.push(
+                  `<i class="${i < t.rating ? 'fas fa-star' : 'far fa-star'}"></i>`,
+                );
+              }
+              slide.innerHTML = `
+              <div class="testimonial-card">
+                <div class="testi-profile">
+                  <div class="testi-avatar">${t.name.charAt(0)}</div>
+                  <div class="testi-name">
+                    <h4>${t.name}</h4>
+                    <p>${t.role}</p>
+                  </div>
+                </div>
+                <div class="testi-rating">${ratingStars.join('')}</div>
+                <div class="testi-message"><i class="fas fa-quote-left"></i> ${t.message}</div>
+              </div>
+            `;
+            }
+            originalSlides.push(slide);
           });
 
-          const prev = document.getElementById('prodPrev');
-          const next = document.getElementById('prodNext');
-          const dotsContainer = document.getElementById('productDots');
-          const slides = productTrack.children;
-          let currentIndex = 0;
+          // Duplikasi slide untuk infinite loop (kloning 2 set di depan dan belakang)
+          const slides = [];
+          // Tambahkan kloning dari akhir di awal
+          for (let i = originalSlides.length - 1; i >= 0; i--) {
+            slides.push(originalSlides[i].cloneNode(true));
+          }
+          // Tambahkan original
+          originalSlides.forEach((slide) => slides.push(slide.cloneNode(true)));
+          // Tambahkan kloning dari awal di akhir
+          for (let i = 0; i < originalSlides.length; i++) {
+            slides.push(originalSlides[i].cloneNode(true));
+          }
 
-          function updateDots() {
-            if (!dotsContainer) return;
-            dotsContainer.innerHTML = '';
-            for (let i = 0; i < slides.length; i++) {
-              const dot = document.createElement('span');
-              dot.classList.add('dot');
-              if (i === currentIndex) dot.classList.add('active');
-              dot.addEventListener('click', () => moveToSlide(i));
-              dotsContainer.appendChild(dot);
+          // Masukkan semua slide ke track
+          slides.forEach((slide) => track.appendChild(slide));
+
+          const totalSlides = slides.length;
+          const originalCount = originalSlides.length;
+          let currentIndex = originalCount; // mulai dari index original pertama
+          let visibleCount = getVisibleCount();
+          let autoplayInterval;
+          let isHovered = false;
+
+          const prevBtn = document.getElementById(prevId);
+          const nextBtn = document.getElementById(nextId);
+
+          function updateSlide(animate = true) {
+            if (!animate) {
+              track.style.transition = 'none';
+            } else {
+              track.style.transition = 'transform 0.5s ease';
+            }
+            const maxIndex = totalSlides - visibleCount;
+            // Pastikan currentIndex dalam batas
+            if (currentIndex < 0) currentIndex = 0;
+            if (currentIndex > maxIndex) currentIndex = maxIndex;
+            const translateValue = -(currentIndex * (100 / visibleCount)) + '%';
+            track.style.transform = `translateX(${translateValue})`;
+          }
+
+          function jumpToRealIndex() {
+            // Jika berada di kloning awal, lompat ke index original yang sesuai
+            if (currentIndex < originalCount) {
+              currentIndex = currentIndex + originalCount;
+              updateSlide(false);
+            }
+            // Jika berada di kloning akhir, lompat ke index original yang sesuai
+            else if (currentIndex >= originalCount * 2) {
+              currentIndex = currentIndex - originalCount;
+              updateSlide(false);
             }
           }
 
-          function moveToSlide(index) {
-            if (index < 0) index = slides.length - 1;
-            if (index >= slides.length) index = 0;
-            currentIndex = index;
-            productTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
-            updateDots();
+          function nextSlide() {
+            currentIndex++;
+            updateSlide();
+            // Jika setelah animasi masuk ke kloning akhir, lompat ke awal original tanpa transisi
+            setTimeout(() => {
+              if (currentIndex >= originalCount * 2) {
+                currentIndex = currentIndex - originalCount;
+                updateSlide(false);
+              }
+            }, 500);
           }
 
-          if (prev)
-            prev.addEventListener('click', () => moveToSlide(currentIndex - 1));
-          if (next)
-            next.addEventListener('click', () => moveToSlide(currentIndex + 1));
+          function prevSlide() {
+            currentIndex--;
+            updateSlide();
+            setTimeout(() => {
+              if (currentIndex < originalCount) {
+                currentIndex = currentIndex + originalCount;
+                updateSlide(false);
+              }
+            }, 500);
+          }
 
-          moveToSlide(0);
-        }
+          // Event listeners untuk tombol
+          if (prevBtn)
+            prevBtn.addEventListener('click', () => {
+              clearInterval(autoplayInterval);
+              prevSlide();
+              startAutoplay();
+            });
+          if (nextBtn)
+            nextBtn.addEventListener('click', () => {
+              clearInterval(autoplayInterval);
+              nextSlide();
+              startAutoplay();
+            });
 
-        // Render testimonial grid
-        const testimonialGrid = document.getElementById('testimonialGrid');
-        if (testimonialGrid) {
-          testimonials.forEach((t) => {
-            const card = document.createElement('div');
-            card.className = 'testimonial-card';
+          // Autoplay
+          function startAutoplay() {
+            if (autoplayInterval) clearInterval(autoplayInterval);
+            autoplayInterval = setInterval(() => {
+              if (!isHovered) {
+                nextSlide();
+              }
+            }, 3000);
+          }
 
-            const profileDiv = document.createElement('div');
-            profileDiv.className = 'testi-profile';
-            const avatarDiv = document.createElement('div');
-            avatarDiv.className = 'testi-avatar';
-            avatarDiv.textContent = t.name.charAt(0);
-            const nameDiv = document.createElement('div');
-            nameDiv.className = 'testi-name';
-            nameDiv.innerHTML = `<h4>${t.name}</h4><p>${t.role}</p>`;
-            profileDiv.appendChild(avatarDiv);
-            profileDiv.appendChild(nameDiv);
+          // Pause on hover
+          const container = track.closest('.carousel-container');
+          if (container) {
+            container.addEventListener('mouseenter', () => {
+              isHovered = true;
+              clearInterval(autoplayInterval);
+            });
+            container.addEventListener('mouseleave', () => {
+              isHovered = false;
+              startAutoplay();
+            });
+          }
 
-            const ratingDiv = document.createElement('div');
-            ratingDiv.className = 'testi-rating';
-            for (let i = 0; i < 5; i++) {
-              const star = document.createElement('i');
-              star.className = i < t.rating ? 'fas fa-star' : 'far fa-star';
-              ratingDiv.appendChild(star);
+          // Update pada resize
+          window.addEventListener('resize', function () {
+            const newVisible = getVisibleCount();
+            if (newVisible !== visibleCount) {
+              visibleCount = newVisible;
+              // Sesuaikan index agar tetap dalam batas
+              const maxIndex = totalSlides - visibleCount;
+              if (currentIndex > maxIndex) currentIndex = maxIndex;
+              updateSlide(false);
             }
-
-            const msgDiv = document.createElement('div');
-            msgDiv.className = 'testi-message';
-            msgDiv.innerHTML = `<i class="fas fa-quote-left"></i> ${t.message}`;
-
-            card.appendChild(profileDiv);
-            card.appendChild(ratingDiv);
-            card.appendChild(msgDiv);
-            testimonialGrid.appendChild(card);
           });
+
+          // Inisialisasi
+          updateSlide(false);
+          startAutoplay();
         }
+
+        // Inisialisasi gallery dan testimonial
+        initInfiniteCarousel(
+          'galleryTrack',
+          'galleryPrev',
+          'galleryNext',
+          productImages,
+          true,
+        );
+        initInfiniteCarousel(
+          'testimonialTrack',
+          'testimonialPrev',
+          'testimonialNext',
+          testimonials,
+          false,
+        );
 
         // Hamburger menu toggle
         const hamburger = document.getElementById('hamburger');
@@ -1183,14 +1261,12 @@
             navMenu.classList.toggle('active');
           });
 
-          // Tutup menu jika klik di luar
           document.addEventListener('click', function (e) {
             if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
               navMenu.classList.remove('active');
             }
           });
 
-          // Tutup menu saat link diklik
           const menuLinks = navMenu.querySelectorAll('a');
           menuLinks.forEach((link) => {
             link.addEventListener('click', function () {
