@@ -697,8 +697,33 @@
         .hero-text h1 {
           font-size: 1.9rem;
         }
+        .hero-text p {
+          font-size: 1rem;
+        }
+        .btn {
+          font-size: 0.9rem;
+          padding: 10px 20px;
+        }
         .section-title {
           font-size: 1.6rem;
+        }
+        .card p {
+          font-size: 0.9rem;
+        }
+        .testi-name h4 {
+          font-size: 1rem;
+        }
+        .testi-message {
+          font-size: 0.9rem;
+        }
+        .stat-number {
+          font-size: 1.5rem;
+        }
+        .price {
+          font-size: 2.8rem;
+        }
+        .price-coret {
+          font-size: 1.2rem;
         }
         .stats-grid {
           flex-direction: column;
@@ -712,7 +737,30 @@
           padding: 30px 20px;
         }
         .price {
-          font-size: 3rem;
+          font-size: 2.5rem;
+        } /* untuk layar sangat kecil */
+      }
+
+      /* untuk layar sangat kecil (≤360px) */
+      @media (max-width: 360px) {
+        .hero-text h1 {
+          font-size: 1.7rem;
+        }
+        .hero-text p {
+          font-size: 0.95rem;
+        }
+        .btn {
+          font-size: 0.85rem;
+          padding: 8px 16px;
+        }
+        .section-title {
+          font-size: 1.4rem;
+        }
+        .stat-number {
+          font-size: 1.3rem;
+        }
+        .price {
+          font-size: 2.2rem;
         }
       }
     </style>
@@ -1178,13 +1226,10 @@
           }
 
           function jumpToRealIndex() {
-            // Jika di kloning awal, lompat ke index original yang sesuai
             if (currentIndex < originalCount) {
               currentIndex = currentIndex + originalCount;
               updateSlide(false);
-            }
-            // Jika di kloning akhir, lompat ke index original yang sesuai
-            else if (currentIndex >= originalCount * 2) {
+            } else if (currentIndex >= originalCount * 2) {
               currentIndex = currentIndex - originalCount;
               updateSlide(false);
             }
@@ -1212,7 +1257,6 @@
             }, 500);
           }
 
-          // Event listeners untuk tombol
           if (prevBtn)
             prevBtn.addEventListener('click', () => {
               clearInterval(autoplayInterval);
@@ -1226,7 +1270,6 @@
               startAutoplay();
             });
 
-          // Autoplay
           function startAutoplay() {
             if (autoplayInterval) clearInterval(autoplayInterval);
             autoplayInterval = setInterval(() => {
@@ -1236,7 +1279,6 @@
             }, 3000);
           }
 
-          // Pause on hover
           const container = track.closest('.carousel-container');
           if (container) {
             container.addEventListener('mouseenter', () => {
@@ -1249,7 +1291,6 @@
             });
           }
 
-          // Update pada resize
           window.addEventListener('resize', function () {
             const newVisible = getVisibleCount();
             if (newVisible !== visibleCount) {
@@ -1260,12 +1301,10 @@
             }
           });
 
-          // Inisialisasi
           updateSlide(false);
           startAutoplay();
         }
 
-        // Inisialisasi gallery dan testimonial
         initInfiniteCarousel(
           'galleryTrack',
           'galleryPrev',
