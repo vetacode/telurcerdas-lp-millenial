@@ -379,7 +379,7 @@
         font-size: 0.95rem;
       }
 
-      /* carousel multi-item (gallery & testimonial) */
+      /* ===== CAROUSEL MULTI-ITEM (GALLERY & TESTIMONIAL) ===== */
       .carousel-section {
         background: #0f1a2b;
       }
@@ -389,7 +389,7 @@
         max-width: 1200px;
         margin: 0 auto;
         overflow: hidden;
-        padding: 0 10px;
+        /* padding diatur per breakpoint */
       }
 
       .carousel-track {
@@ -412,6 +412,8 @@
         border: 1px solid #3e4b60;
         transition: 0.3s;
         height: 100%;
+        display: flex;
+        flex-direction: column;
       }
 
       .testimonial-card:hover {
@@ -439,28 +441,39 @@
         color: var(--gold);
         border: 2px solid var(--gold);
         font-weight: 700;
+        flex-shrink: 0;
       }
 
+      .testi-name {
+        min-width: 0; /* biar teks bisa di-ellipsis */
+      }
       .testi-name h4 {
         font-size: 1.1rem;
         font-weight: 700;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
-
       .testi-name p {
         font-size: 0.75rem;
         color: #a0b0c0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       .testi-rating {
         color: var(--gold);
         margin-bottom: 12px;
         font-size: 0.9rem;
+        flex-shrink: 0;
       }
 
       .testi-message {
         font-style: italic;
         color: #d0daea;
         font-size: 0.95rem;
+        overflow-wrap: break-word;
       }
 
       .testi-message i {
@@ -516,10 +529,10 @@
       }
 
       .carousel-btn.prev {
-        left: 0;
+        left: 10px;
       }
       .carousel-btn.next {
-        right: 0;
+        right: 10px;
       }
 
       /* responsive untuk carousel item */
@@ -532,6 +545,19 @@
       @media (max-width: 640px) {
         .carousel-item {
           width: 100%; /* 1 item */
+        }
+        .carousel-track {
+          gap: 0; /* tidak perlu gap karena hanya 1 item */
+        }
+        /* beri sedikit ruang di kiri kanan agar tidak mepet */
+        .carousel-container {
+          padding: 0 10px;
+        }
+        .carousel-btn.prev {
+          left: 5px;
+        }
+        .carousel-btn.next {
+          right: 5px;
         }
       }
 
@@ -693,7 +719,7 @@
         <div class="logo-diamant">
           <!-- Logo Diamant (dengan fallback) -->
           <img
-            src="https://dongkrakusaha.com/gambarbebas/1526720260226-034358_logo-diamant-only.png"
+            src="/images/logo-diamant-only.svg"
             alt="Diamant"
             onerror="
               this.style.display = 'none';
@@ -996,7 +1022,7 @@
         <a
           href="https://wa.me/628119950205?text=Saya%20siap%20order%20Telur%20Cerdas"
           class="btn btn-gold"
-          ><i class="fab fa-whatsapp"></i> Order via WhatsApp 08119950205</a
+          ><i class="fab fa-whatsapp"></i> Dapatkan Nutrisi Terbaik Anak</a
         >
       </div>
     </section>
@@ -1138,7 +1164,6 @@
               track.style.transition = 'transform 0.5s ease';
             }
             const maxIndex = totalSlides - visibleCount;
-            // Pastikan currentIndex dalam batas
             if (currentIndex < 0) currentIndex = 0;
             if (currentIndex > maxIndex) currentIndex = maxIndex;
             const translateValue = -(currentIndex * (100 / visibleCount)) + '%';
@@ -1146,12 +1171,12 @@
           }
 
           function jumpToRealIndex() {
-            // Jika berada di kloning awal, lompat ke index original yang sesuai
+            // Jika di kloning awal, lompat ke index original yang sesuai
             if (currentIndex < originalCount) {
               currentIndex = currentIndex + originalCount;
               updateSlide(false);
             }
-            // Jika berada di kloning akhir, lompat ke index original yang sesuai
+            // Jika di kloning akhir, lompat ke index original yang sesuai
             else if (currentIndex >= originalCount * 2) {
               currentIndex = currentIndex - originalCount;
               updateSlide(false);
@@ -1161,7 +1186,6 @@
           function nextSlide() {
             currentIndex++;
             updateSlide();
-            // Jika setelah animasi masuk ke kloning akhir, lompat ke awal original tanpa transisi
             setTimeout(() => {
               if (currentIndex >= originalCount * 2) {
                 currentIndex = currentIndex - originalCount;
@@ -1223,7 +1247,6 @@
             const newVisible = getVisibleCount();
             if (newVisible !== visibleCount) {
               visibleCount = newVisible;
-              // Sesuaikan index agar tetap dalam batas
               const maxIndex = totalSlides - visibleCount;
               if (currentIndex > maxIndex) currentIndex = maxIndex;
               updateSlide(false);
